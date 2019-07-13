@@ -1,0 +1,66 @@
+nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    z-index: 3;
+}
+
+nav li a {
+    color:$light-black !important;
+}
+
+nav li a.about {
+    color: $orange !important;
+}
+
+nav #menu-icon {
+    color: $light-black;
+}
+
+.breadcrumb-section {
+    background: -webkit-linear-gradient(to bottom right, #42275a, #734b6d);
+    background: -moz-linear-gradient(to bottom right, #42275a, #734b6d);
+    background: -ms-linear-gradient(to bottom right, #42275a, #734b6d);
+    background: -o-linear-gradient(to bottom right, #42275a, #734b6d);
+    background:  linear-gradient(to bottom right, #42275a, #734b6d);
+    height: auto;
+    padding: 2rem;
+    margin-top: 4.1rem;
+}
+
+.breadcrumb-section .about {
+    color: $orange;
+}
+
+.breadcrumb-section a:hover {
+    color: $link-color;
+}
+
+.breadcrumb-section h4 {
+    color: #fff
+}
+
+.breadcrumb:before {
+    position: relative;
+    top: -5px;
+}
+
+.about-section {
+    background-color: #fff;
+    margin-bottom: $lg-size !important;
+    padding: $sm-size 2rem 2rem 2rem;
+}
+
+.about-header {
+    color: $orange;
+    font-family: $raleway;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-text {
+    font-family: $raleway;
+}
+
+#aboutUs-list li {
+    list-style-type: circle;
+    margin-left: 5rem;
+}

@@ -1,0 +1,48 @@
+.section {
+    color: #666;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    
+    h4 {
+        font-family: $raleway;
+    }
+    
+    #store {
+        margin-top: 3.125rem;
+        text-align: center;
+    }
+    
+    .store-icon  {
+        color: $light-gray;
+        font-size: 9.375rem;
+        opacity: 0.8;
+        transition: 0.5s linear color;
+    }
+    
+    .store-icon:hover  {
+        color: #db8e00;
+    }
+    
+    #store p {
+        font-weight: 600;
+    }
+    
+    a.more {
+        color: $light-black;
+        font-size: $md-size;
+    }
+    
+    a.more:hover {
+        color: $link-color;
+    }
+    
+    a.btn-more:visited {
+        color: #333;
+    }
+    
+    .card-panel {
+        background-color: #fff;
+        color: #333 !important;
+    }
+}
+

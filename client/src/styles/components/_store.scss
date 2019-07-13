@@ -1,0 +1,113 @@
+nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+nav li a {
+    color: #333 !important;
+}
+
+nav li a.store {
+    color: $orange !important;
+}
+
+nav #menu-icon {
+    color: #333;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: #ccc !important;
+}
+
+a.breadcrumb:hover {
+    color: $orange; 
+}
+
+.breadcrumb:before {
+    color: #444 !important;
+    margin-top: -0.3rem !important;
+}
+
+a.breadcrumb.store {
+    color: #42275a !important;
+    font-family: $krub;
+}
+
+a.breadcrumb.store:hover {
+    color: $orange !important;
+}
+
+#store .card {
+    cursor: pointer;
+}
+
+.card-action span, .pagination {
+    font-family: $krub;
+}
+
+#store-header {
+    background-color: #fff;
+    margin-top: 7rem;
+    margin-bottom: $lg-size;
+    padding: 1rem 2rem;
+}
+
+#store-header h4 {
+    color: #6d476b;
+    font-family: $krub;
+}
+
+#store {
+    background-color: #fff;
+    padding: 10px;
+}
+
+#store-container .store {
+    border: 2px solid blue;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+}
+
+#store h5 {
+    color: $orange;
+    font-family: $raleway;
+    text-align: center;
+} 
+
+.materialbox-caption {
+    font-family: $krub;
+}
+
+.pagination li.active a {
+    background-color: #db8e00;
+}
+
+.pagination li.active a:hover {
+    color: #333 !important;
+}
+
+.pagination li a:hover {
+    background-color: #eee;
+}
+
+.pagination {
+    margin-bottom: 1.6rem;
+}
+
+@media (max-width: $lg-breakpoint) {
+    #store-container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #store-container .store {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: $md-breakpoint) {
+    #store-container .store {
+        flex-basis: 100%;
+    }
+}

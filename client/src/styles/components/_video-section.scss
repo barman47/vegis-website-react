@@ -1,0 +1,56 @@
+.v-header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.fullscreen-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fullscreen-video-wrap video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: fill;
+}
+
+.header-overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $transparent-blue;
+    z-index: 2;
+    opacity: 0.65;
+}
+
+.header-content {
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+}
+
+.txt-type > .txt {
+    border-right: 0.2rem solid #fff;
+    font-family: $raleway;
+}
+
+#readMore {
+    border: 0.125rem solid #fff;
+    background: transparent;
+    box-shadow: none !important;
+    font-family: $dosis;
+    margin: auto;
+}
+
+#readMore:hover {
+    background: #fff;
+    color: $light-black;
+}

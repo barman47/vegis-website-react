@@ -1,0 +1,5 @@
+export const REGISTER_STUDENT = 'REGISTER_STUDENT';
+export const APPLICATION_SUCCESS = 'APPLICATION_SUCCESS';
+export const GET_ERRORS = 'GET_ERRORS';
+export const USER_EXISTS = 'USER_EXISTS';
+// export const CLEAR_ERRORS = 'CLEAR_ERRORS';

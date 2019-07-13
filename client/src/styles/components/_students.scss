@@ -1,0 +1,186 @@
+.add-student-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+    font-family: $quicksand;
+    margin: 10rem $xxl-size;
+    padding: $md-size $lg-size $xl-size $lg-size;
+
+    h2 {
+        color: $light-gray;
+        // font-size: $lg-size;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: $md-size;
+    }
+
+    h5 {
+        color: darken($orange, 5%);
+        font-weight: 300;
+        margin-bottom: $md-size;
+    }
+
+    .personal-info, .next-of-kin-info {
+        margin-top: $lg-size;
+    }
+
+    .input-field input, textarea {
+        color: $light-gray;
+    }
+
+    .input-field .helper-text.invalid {
+        color: $error-text;
+    }
+
+    /* label color */
+   .input-field label {
+        color: $light-black !important;
+    }
+
+    /* label focus color */
+    .input-field input:focus + label, textarea:focus + label {
+        color: $orange !important;
+    }
+  
+    /* label underline focus color */
+    .input-field input:focus, textarea:focus {
+        border-bottom: 1px solid $orange !important;
+        box-shadow: 0 1px 0 0 $orange !important;
+    }
+    
+    /* valid color */
+    .input-field input.valid, textarea.valid {
+        border-bottom: 1px solid $success-text !important;
+        box-shadow: 0 1px 0 0 $success-text !important;
+    }
+  
+    /* invalid color */
+    .input-field input[type=text].invalid {
+        border-bottom: 1px solid $error-text !important;
+        box-shadow: 0 1px 0 0 $error-text !important;
+    }
+
+    // Valid label color
+    .input-field input.valid + label, textarea.valid + label {
+        color: $success-text !important;
+    } 
+
+    // invalid label color
+    .input-field input.invalid + label, textarea.invalid + label {
+        color: $error-text !important;
+    } 
+
+    // Icon color
+    .input-field .prefix {
+        color: lighten($light-gray, 5%) !important;
+    }
+  
+    /* icon prefix focus color */
+    .input-field .prefix.active {
+        color: darken($orange, 5%) !important;
+    }
+
+    // Icon invalid color
+    .input-field input.invalid .prefix {
+        color: $error-text !important;
+    }
+
+    // Icon valid color
+    .input-field input.invalid .prefix {
+        color: $success-text !important;
+    }
+
+    [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+        border: 2px solid darken($orange, 5%);
+    }
+
+    [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+        background-color: darken($orange, 5%);
+    }
+
+    svg {
+        fill: $orange;
+    }
+
+    .dropdown-content li>span {
+        color: $orange !important;
+    }
+
+    .datepicker-date-display  {
+        background-color: $orange;
+    }
+
+    .datepicker-table td.is-today {
+        color: $orange;
+    }
+
+    .datepicker-table td.is-selected {
+        background-color: darken($orange, 5%);
+    }
+
+    .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+        color: $orange;
+    }
+
+    [type="checkbox"]:checked+span:not(.lever):before {
+        border-right: 2px solid $orange;
+    }
+
+    [type="checkbox"]:checked+span:not(.lever):before {
+        border-bottom: 2px solid $orange;
+    }
+
+    input[type=submit] {
+        background-color: $orange;
+        color: $off-white;
+        font-family: $quicksand;
+    }
+
+    input[type=submit]:hover {
+        background-color: darken($orange, 5%);
+    }
+
+    .input-title {
+        color: $light-gray !important;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: $md-breakpoint) {
+    .add-student-form {
+        margin-top: 6rem;
+        margin-bottom: $lg-size;
+        margin-left: $md-size;
+        margin-right: $md-size;
+        padding: $sm-size 0.5rem $lg-size 0.5rem;
+    }
+    .add-student-form h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .add-student-form h5 {
+        font-size: $md-size;
+        text-align: center;
+    }
+
+    .gender {
+        text-align: center;
+    }
+
+    .agree-text {
+        text-align: center;
+    }
+
+    .agree {
+        text-align: justify;
+    }
+
+    input[type=submit] {
+        width: 100%;
+    }
+
+    .course-type {
+        text-align: center;
+    }
+}

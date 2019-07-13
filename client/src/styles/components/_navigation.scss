@@ -1,0 +1,66 @@
+nav li a.home {
+    color: #ffa500 !important;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding-left: 1.875rem !important;
+    padding-right: 1.875rem !important;
+    transition: 0.8s;
+}
+
+nav li a {
+    color: #fff !important;
+    font-family: $krub;
+}
+
+nav li a:hover {
+    background: none !important;
+    color: $link-color !important;
+}
+
+.sidenav {
+    background: -webkit-linear-gradient(to bottom, #42275a, #734b6d);
+    background: -moz-linear-gradient(to bottom, #42275a, #734b6d);
+    background: -ms-linear-gradient(to bottom, #42275a, #734b6d);
+    background: -o-linear-gradient(to bottom, #42275a, #734b6d);
+    background:  linear-gradient(to bottom, #42275a, #734b6d);
+    width: 50vw !important;
+}
+
+.sidenav-overlay {
+    z-index: 4 !important;
+}
+
+.sidenav li > a {
+    color: #fff !important;
+}
+
+nav.scrolled #menu-icon {
+    color: $light-black;
+}
+
+.brand-logo img {
+    width: 11.25rem;
+    height: 1.875rem;
+}
+
+.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    transition: 0.8s;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+    -ms-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+    -o-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.scrolled-links {
+    color: $light-black !important;
+}

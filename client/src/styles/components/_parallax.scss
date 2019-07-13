@@ -1,0 +1,48 @@
+.parallax1, .parallax2 {
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.parallax1 {
+    background-image: url('../img/parallax1.jpg');
+    min-height: 31.25rem;
+}
+
+.parallax2 {
+    background-image: url('../img/parallax2.jpg');
+    min-height: 31.25rem;
+}
+
+.parallax2 .parallax-text {
+    border: none;
+    background: none;
+}
+
+.parallax-text {
+    background-color: #111;
+    font-family: $raleway;
+    opacity: 0.9;
+    position: relative !important;
+    top: 15.625rem !important;
+    left: 25%;
+    font-size: 2.3125rem;
+    font-weight: 400;
+    padding: 1.25rem;
+    color: #fff;
+    max-width: 50%;
+    border-left: 5px solid #673ab7;
+}
+
+@media (max-width: $md-breakpoint) {
+    .parallax-text {
+        top: 10rem !important;
+        left: 0;
+        max-width: 100% !important;
+        padding: 0;
+        text-align: center;
+    }
+}

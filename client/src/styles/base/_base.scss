@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $light-black;
+    overflow-x: hidden;
+}
+
+.invalid-toast {
+    background-color: lighten($error-text, 5%) !important;
+    color: #f0f0f0 !important;
+}
+
+.underline {
+    border-bottom: 3px solid #734b6d;
+}
+
+
+#modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .7);
+    font-family: $quicksand;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+                                            
+.modal-container {
+    background-color:  $off-white;
+    border-radius: 5px;
+    padding: $sm-size $lg-size $lg-size $lg-size;
+    overflow-y: hidden;
+}
+
+.modal-header {
+    border-bottom: 1px solid $lighter-gray;
+    color: darken($success-text, 5%);
+    padding-bottom: $md-size;
+}
+
+.modal-okay-btn {
+    background-color: $orange !important;
+    color: $off-white;
+    font-family: $quicksand;
+}
+
+.modal-okay-btn:hover {
+    background-color: darken($orange, 5%) !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+@media (max-width: $md-breakpoint) {
+    .modal-container {
+        margin-left: $md-size;
+        margin-right: $md-size;
+    }
+
+    .modal-header {
+        font-size: $md-size;
+    }
+}
