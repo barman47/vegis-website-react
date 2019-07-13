@@ -19,6 +19,12 @@
     "express",
     "JavaScript"
   ],
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.1-next.0",
+    "yarn": "1.15.2"
+  },
+  
   "author": "Uzoanya Dominic",
   "license": "MIT",
   "dependencies": {
