@@ -44,10 +44,12 @@ class FindStudent extends Component {
             <div>
                 <form className="find-student-form" onSubmit={this.onSubmit} noValidate>
                     <div className="row find-student__student-number">
-                        <div className="col s12 m6 l6 input-field">
+                        <h1 style={{ textAlign: 'center' }}><span className="mdi mdi-account-search search-student-icon"></span></h1>
+                        <h1 style={{ fontSize: '2.5rem', textAlign: 'center' }}>Find Student</h1>
+                        <div className="col s12 input-field">
                             <span className="mdi mdi-github-circle prefix"></span>
-                            <label htmlFor="studentNumber">Registration Number</label>
                             <input
+                                type="text"
                                 className={classnames('validate', {
                                     'invalid': errors.studentNumber
                                 })}
@@ -57,8 +59,9 @@ class FindStudent extends Component {
                                 value={this.state.studentNumber}
                                 required
                             />
-                            
+                            <label htmlFor="studentNumber">Registration Number</label>
                             {errors.studentNumber ? <span className="helper-text invalid">{errors.studentNumber}</span> : null}
+                            <span className="helper-text">Provide Student Registration number to print form.</span>
                         </div>
                     </div>
                     <div className="col s12 input-field">

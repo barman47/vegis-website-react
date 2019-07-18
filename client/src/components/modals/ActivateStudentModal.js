@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import M from 'materialize-css';
 
 import { hideModal } from '../../actions/modalActions';
-import { activateStudent } from '../../actions/studentActions';
+import { activateStudent, clearStudent } from '../../actions/studentActions';
 
 import TextInputGroup from '../inputGroups/TextInputGroup';
 
@@ -42,9 +42,11 @@ class ActivateStudentModal extends Component {
                     this.setState({
                         showModal: false,
                         registrationNumber: '',
-                        authenticationPin: ''
+                        authenticationPin: '',
+                        errors: {}
                     });
                     this.props.hideModal();
+                    this.props.clearStudent();
                 }
             });
         }
@@ -128,6 +130,7 @@ class ActivateStudentModal extends Component {
 
 ActivateStudentModal.propTypes = {
     activateStudent: PropTypes.func.isRequired,
+    clearStudent: PropTypes.func.isRequired,
     hideModal: PropTypes.func.isRequired
 };
 
@@ -137,4 +140,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, { activateStudent, hideModal })(withRouter(ActivateStudentModal));
+export default connect(mapStateToProps, { activateStudent, clearStudent, hideModal })(withRouter(ActivateStudentModal));

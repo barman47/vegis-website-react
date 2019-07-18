@@ -1,7 +1,3 @@
-nav li a.home {
-    color: #ffa500 !important;
-}
-
 nav {
     position: absolute;
     top: 0;
@@ -38,8 +34,8 @@ nav li a:hover {
     z-index: 4 !important;
 }
 
-.sidenav li > a {
-    color: #fff !important;
+.sidenav li .mobile-link {
+    color: #fff;
 }
 
 nav.scrolled #menu-icon {
@@ -49,6 +45,39 @@ nav.scrolled #menu-icon {
 .brand-logo img {
     width: 11.25rem;
     height: 1.875rem;
+}
+
+nav ul.dropdown {
+    display: block !important;
+    position: absolute;
+}
+
+nav ul.dropdown li {
+    clear: both;
+    width: 100%;
+    background-color: #f8f8f8 !important;
+}
+
+.sidenav .mobile-link .links {
+    color: $border-color;
+}
+
+a.mobile-dropdown-links {
+    background-color: $border-color;
+    color: $light-black !important;
+}
+
+a.mobile-dropdown-links:hover {
+    background-color: darken($border-color, 10%) !important;
+    color: $link-color !important;
+}
+
+.sidenav .mobile-link li  {
+    color: #fff;
+}
+
+nav ul.dropdown li:hover, nav ul.mobile-dropdown li:hover {
+    background-color: darken($border-color, 10%) !important;
 }
 
 .scrolled {

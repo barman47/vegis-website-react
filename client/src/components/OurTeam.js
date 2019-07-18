@@ -8,7 +8,28 @@ const OurTeam = () => {
         <section id="our-team" className="white">
             <h3>Our Team</h3>
             <div className="row white">
-                <div className="col s12 m6 l3">
+                <div className="col s12 m6 l3 image-container">
+                    <img className="hoverable" src={dominic} alt="Uzoanya Dominic" />
+                    <p className="name">Uzoanya Dominic</p>
+                    <p className="title">Senior Developer</p>
+                </div>
+                <div className="col s12 m6 l3 image-container">
+                    <img className="hoverable" src={dominic} alt="Uzoanya Dominic" />
+                    <p className="name">Uzoanya Dominic</p>
+                    <p className="title">Senior Developer</p>
+                </div>
+                <div className="col s12 m6 l3 image-container">
+                    <img className="hoverable" src={chika} alt="Ikeanyionwu Chika" />
+                    <p className="name">Ikeanyionwu Chika</p>
+                    <p className="title">Administration Manager</p>  
+                </div>
+                <div className="col s12 m6 l3 image-container">
+                    <img className="hoverable" src={promise} alt="Chikwendu Promise" />
+                    <p className="name">Chikwendu Promise</p>
+                    <p className="title">Admin Manager</p>
+                </div>
+            </div>
+                {/* <div className="col s12 m6 l3">
                     <div className="card medium">
                         <div className="card-image">
                             <img src={dominic} alt="Uzoanya Dominic" />
@@ -60,7 +81,7 @@ const OurTeam = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>      
     );
 };

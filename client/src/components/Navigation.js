@@ -13,7 +13,8 @@ class Navigation extends Component {
         super();
         this.state = {
             showModal: false,
-            showFindModal: false
+            showFindModal: false,
+            showMenu: false
         };
     }
 
@@ -25,13 +26,35 @@ class Navigation extends Component {
         const mobileLinks = document.querySelectorAll('.mobile-link');
         mobileLinks.forEach((mobileLink) => {
             mobileLink.addEventListener('click', (e) => {
-                setTimeout(sidenavInstance[0].close(), 1000)
+                if (e.target.id === 'mobile-dropdown') {
+                    this.setState({
+                        showMenu: true
+                    });
+                } else {
+                    setTimeout(sidenavInstance[0].close(), 1000);
+                }
             });
         });
     }
 
     showModal = () => {
         this.props.showModal();
+    }
+
+    showMenu = (e) => {
+        e.preventDefault();
+        this.setState({
+            showMenu: true
+        });
+        document.addEventListener('click', this.hideMenu);
+    }
+
+    hideMenu = (e) => {
+        if (e.target.id !== 'mobile-dropdown') {
+            this.setState({
+                showMenu: false
+            });
+        }
     }
 
     render () {
@@ -54,24 +77,54 @@ class Navigation extends Component {
                             <NavLink to="/" className="brand-logo"><img src={logo} alt="Logo" /></NavLink>
                             <NavLink to="#" data-target="mobile-nav" className="sidenav-trigger"><span id="menu-icon" className="mdi mdi-menu"></span></NavLink>
                             <ul className="right hide-on-med-and-down">
-                                <li><NavLink className="links home" to="/">Home</NavLink></li>
-                                <li><NavLink className="links store" to="/store/laptops">Store</NavLink></li>
-                                {/* <li><NavLink className="links store" to="/courses">Courses</NavLink></li> */}
-                                <li><NavLink className="links store" to="/students">Students</NavLink></li>
-                                <li><NavLink onClick={this.showModal} className="links" to="#!">Activate Student</NavLink></li>
-                                <li><NavLink className="links" to="/students/find">Find Student</NavLink></li>
-                                <li><NavLink className="links about" to="/about">About</NavLink></li>
+                                <li><NavLink onMouseOver={this.hideMenu} className="links" to="/">Home</NavLink></li>
+                                <li><NavLink onMouseOver={this.hideMenu} className="links" to="/store/laptops">Store</NavLink></li>
+                                {/* <li><NavLink className="links" to="/courses">Courses</NavLink></li> */}
+                                <li><NavLink onClick={this.showMenu} onMouseOver={this.showMenu} className="links" to="#!">
+                                    Students
+                                    </NavLink>
+                                    {
+                                        this.state.showMenu 
+                                        ?
+                                        (
+                                            <ul onMouseLeave={this.hideMenu} className="dropdown">
+                                                <li><NavLink className="links" to="/students">Apply</NavLink></li>
+                                                <li className="divider"></li>
+                                                <li><NavLink onClick={this.showModal} className="links" to="#!">Activate Student</NavLink></li>
+                                                <li className="divider"></li>
+                                                <li><NavLink className="links" to="/students/find">Find Student</NavLink></li>
+                                            </ul>
+                                        )
+                                        :
+                                        null
+                                    }
+                                </li>
+                                <li><NavLink onMouseOver={this.hideMenu} className="links" to="/about">About</NavLink></li>
                             </ul>
                         </div>
                     </nav>
                     <ul className="sidenav" id="mobile-nav">
-                        <li><NavLink className="links mobile-link home" to="/">Home</NavLink></li>
-                        <li><NavLink className="links mobile-link store" to="/store/laptops">Store</NavLink></li>
-                        {/* <li><NavLink className="links mobile-link store" to="/courses">Courses</NavLink></li> */}
-                        <li><NavLink className="links mobile-link store" to="/students">Students</NavLink></li>
-                        <li><NavLink onClick={this.showModal} className="links mobile-link" to="#!">Activate Student</NavLink></li>
-                        <li><NavLink className="links mobile-link" to="/students/find">Find Student</NavLink></li>
-                        <li><NavLink className="links mobile-link about" to="/about">About</NavLink></li>
+                        <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/">Home</NavLink></li>
+                        <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/store/laptops">Store</NavLink></li>
+                        {/* <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links store" to="/courses">Courses</NavLink></li> */}
+                        <li><NavLink id="mobile-dropdown" onClick={this.showMenu} onMouseEnter={this.showMenu} className="links mobile-link" to="#!">
+                            Students
+                            </NavLink>
+                            {
+                                this.state.showMenu 
+                                ?
+                                (
+                                    <ul className="mobile-dropdown">
+                                        <li className="mobile-link"><NavLink className="mobile-dropdown-links" to="/students">Apply</NavLink></li>
+                                        <li className="mobile-link"><NavLink className="mobile-dropdown-links" onClick={this.showModal} to="#!">Activate Student</NavLink></li>
+                                        <li className="mobile-link"><NavLink className="mobile-dropdown-links" to="/students/find">Find Student</NavLink></li>
+                                    </ul>
+                                )
+                                :
+                                null
+                            }
+                        </li>
+                        <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/about">About</NavLink></li>
                     </ul>
                 </div>
             </Fragment>
