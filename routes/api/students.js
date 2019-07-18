@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Student = require('../../models/Student');
 const validateStudentRegisterInput = require('../../utils/validation/register');
+const validateFindStudentInput = require('../../utils/validation/findStudent');
+const validateActivateStudentInput = require('../../utils/validation/activateStudent');
 
 router.get('/', (req, res) => {
     res.send('Student route works!');
@@ -62,6 +64,12 @@ router.post('/registerStudent', (req, res) => {
         studentId: id
     });
 
+    if (req.body.courseType === 'SIWES') {
+        newStudent.duration = '24 Weeks';
+    } else if (req.body.courseType === 'Regular') {
+        newStudent.duration = '12 Weeks';
+    }
+
     Student.findOne({ email: newStudent.email })
         .then(student => {
             if (student) {
@@ -79,34 +87,71 @@ router.post('/registerStudent', (req, res) => {
 });
 
 router.post('/findStudent', (req, res) => {
-    Student.find({ $text: { $search: req.body.searchQuery}, activated: true}, { $score: { $meta: "textScore" }})
-        .sort({ $score: { $meta: "textScore" } })
-        .then(students => {
-            if(!students) {
-                return res.status(404).json({ err: 'Student not found.' });
+    const { errors, isValid } = validateFindStudentInput(req.body);
+
+    if(!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    Student.findOne({studentId: req.body.studentNumber})
+        .then(student => {
+            if (!student) {
+                errors.studentNumber = 'Student not Found';
+                return res.status(404).json(errors);
             }
-            console.log('found ' + students.length + ' Students.');
-            res.json(students);
+            res.json(student);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            return res.status(500).json(err);
+        });
+
+    // if (parseInt(req.body.authenticationPin) === authenticationPin) {
+    //     Student.find({ $text: { $search: req.body.registrationNumber}, activated: true}, { $score: { $meta: "textScore" }})
+    //         .sort({ $score: { $meta: "textScore" } })
+    //         .then(students => {
+    //             if(students) {
+    //                 console.log('found ' + students.length + ' Students.');
+    //                 res.json(students);
+    //             } else {
+    //                 errors.registrationNumber = 'Student not Found'
+    //                 return res.status(404).json(errors);
+    //             }
+                
+    //         })
+    //         .catch(err => console.log(err));
+    // } else {
+    //     errors.authenticationPin = 'Incorrect Authentication Pin';
+    //     return res.status(400).send(errors);
+    // }
 });
 
 router.post('/activateStudent', (req, res) => {
-    const activationCode = '5555';
-    if (req.body.activationCode === activationCode) {
-        Student.findOneAndUpdate({ studentId: req.body.studentId }, {$set: { activated: true }}, { new: true })
-        .then(student => {
-            if (student) {
-                res.json(student)
-            } else {
-                res.status(404).json({ err: 'Student not found' });
-            }
-        })
-        .catch(err => console.log(err));
-    } else {
-        res.status(400).json({ err: 'You are not authorized to do this!'});
+    const { errors, isValid } = validateActivateStudentInput(req.body);
+    const { authenticationPin } = require('../../config/keys');
+
+    if(!isValid) {
+        return res.status(400).json(errors);
     }
-    
+
+    switch (parseInt(req.body.authenticationPin)) {
+        case authenticationPin:
+            Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
+                .then(student => {
+                    if (student) {
+                        res.json(student)
+                    } else {
+                        errors.registrationNumber = 'Student not found.';
+                        res.status(404).json(errors);
+                    }
+                })
+                .catch(err => console.log(err));
+                break;
+
+        default:
+            errors.authenticationPin = 'Incorrect Authentication Pin!';
+            return res.status(400).json(errors);
+    }
 });
 
 module.exports = router;

@@ -1,0 +1,83 @@
+.application-form {
+    // background-color: #fff;
+    border: 1px solid lighten($light-gray, 30%);
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    margin-top: $xxl-size !important;
+    margin-bottom: $xxl-size !important;
+
+    .passport-section {
+        border: 2px solid $light-black;
+        width: 100px;
+        height: 150px;
+    }
+
+    .form-section {
+        border: 1px solid lighten($light-gray, 30%);
+        border-radius: 5px;
+        margin: $xl-size;
+        padding-left: $md-size;
+        padding-right: $md-size;
+
+        h4 {
+            text-align: center;
+            margin-bottom: $lg-size;
+        }
+
+        label {
+            color: $light-black;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .text-content {
+            font-weight: lighter !important;
+        }
+    }
+
+    .button-section {
+        margin-left: $xl-size;
+        margin-bottom: $xl-size;
+
+        button {
+            background-color: $orange;
+            color: $off-white;
+            font-family: $quicksand;
+        }
+    
+        button:hover {
+            background-color: darken($orange, 5%);
+        }
+    }
+}
+
+@media (max-width: $md-breakpoint) {
+    .head-section {
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        flex-direction: column;
+    }
+
+    .head-section h1 {
+        text-align: justify;
+        margin-top: 0.5rem !important;
+    }
+
+    .passport-section {
+        width: 15rem !important;
+        height: 15rem !important;
+        margin-left: 0 !important;
+    }
+    .application-form {
+        border: none;
+    }
+
+    .form-section {
+        margin: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: $lg-size !important;
+    }
+}

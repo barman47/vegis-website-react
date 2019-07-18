@@ -1,0 +1,16 @@
+.find-student-form {
+    border: 1px solid $light-black;
+    // display: flex;
+    // flex-direction: column;
+    align-items: center;
+    margin: $lg-size auto;
+    width: 50%;
+
+    .row {
+        width: 100%;
+    }
+
+    #studentNumber {
+        width: 20rem !important;
+    }
+}

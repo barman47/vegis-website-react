@@ -16,8 +16,79 @@ body {
     overflow-x: hidden;
 }
 
+.input-field input, textarea {
+    color: $light-gray;
+}
+
+.input-field .helper-text.invalid {
+    color: $error-text;
+}
+
+/* label color */
+.input-field label {
+    color: $light-black !important;
+}
+
+/* label focus color */
+.input-field input:focus + label, textarea:focus + label {
+    color: $orange !important;
+}
+
+/* label underline focus color */
+.input-field input:focus, textarea:focus {
+    border-bottom: 1px solid $orange !important;
+    box-shadow: 0 1px 0 0 $orange !important;
+}
+
+/* valid color */
+.input-field input.valid, textarea.valid {
+    border-bottom: 1px solid $success-text !important;
+    box-shadow: 0 1px 0 0 $success-text !important;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid $error-text !important;
+    box-shadow: 0 1px 0 0 $error-text !important;
+}
+
+// Valid label color
+.input-field input.valid + label, textarea.valid + label {
+    color: $success-text !important;
+} 
+
+// invalid label color
+.input-field input.invalid + label, textarea.invalid + label {
+    color: $error-text !important;
+} 
+
+// Icon color
+.input-field .prefix {
+    color: lighten($light-gray, 5%) !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: darken($orange, 5%) !important;
+}
+
+// Icon invalid color
+.input-field input.invalid .prefix {
+    color: $error-text !important;
+}
+
+// Icon valid color
+.input-field input.invalid .prefix {
+    color: $success-text !important;
+}
+
 .invalid-toast {
     background-color: lighten($error-text, 5%) !important;
+    color: #f0f0f0 !important;
+}
+
+.success-toast {
+    background-color: lighten($success-text, 5%) !important;
     color: #f0f0f0 !important;
 }
 
@@ -37,6 +108,15 @@ body {
     position: fixed;
     top: 0;
     z-index: 999;
+
+    .close-icon {
+        color: $light-black;
+        cursor: pointer;
+    }
+
+    .close-icon:hover {
+        color: $error-text;
+    }
 }
                                             
 .modal-container {
@@ -52,13 +132,13 @@ body {
     padding-bottom: $md-size;
 }
 
-.modal-okay-btn {
+.modal-okay-btn, #activate-button, #findStudentButton {
     background-color: $orange !important;
     color: $off-white;
     font-family: $quicksand;
 }
 
-.modal-okay-btn:hover {
+.modal-okay-btn:hover, #activate-button:hover, #findStudentButton:hover {
     background-color: darken($orange, 5%) !important;
 }
 

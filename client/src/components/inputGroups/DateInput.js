@@ -30,7 +30,7 @@ DateInput.propTypes = {
 };
 
 DateInput.defaultProps = {
-    icon: 'mdi mdi-github-circle prefix'
+    icon: 'mdi mdi-calendar prefix'
 };
 
 export default DateInput;

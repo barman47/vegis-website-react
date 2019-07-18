@@ -87,6 +87,11 @@ const StudentSchema = new Schema({
         required: true
     },
 
+    duration: {
+        type: String,
+        required: true
+    },
+
     studentId: {
         type: String,
         required: true

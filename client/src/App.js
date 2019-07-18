@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';  
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -12,9 +12,11 @@ import Screens from './components/Screens';
 import Printers from './components/Printers';
 import Accessories from './components/Accessories';
 import Students from './components/Students';
+import ApplicationForm from './components/ApplicationForm';
 
 import { Provider } from 'react-redux';
 import store from './store';
+import FindStudent from './components/FindStudent';
 
 class App extends Component {
 	render () {
@@ -25,13 +27,15 @@ class App extends Component {
 						<Header />
 						<Route path="/" exact={true} component={Home} />
 						<Route path="/about" exact={true} component={About} />
-            			<Route path="/store/laptops" exact={true} component={Laptops} />	
-            			<Route path="/store/systemUnits" exact={true} component={SystemUnits} />	
-            			<Route path="/store/tabs" exact={true} component={Tabs} />	
-            			<Route path="/store/screens" exact={true} component={Screens} />	
-            			<Route path="/store/printers" exact={true} component={Printers} />	
+            			<Route path="/store/laptops" exact={true} component={Laptops} />
+            			<Route path="/store/systemUnits" exact={true} component={SystemUnits} />
+            			<Route path="/store/tabs" exact={true} component={Tabs} />
+            			<Route path="/store/screens" exact={true} component={Screens} />
+            			<Route path="/store/printers" exact={true} component={Printers} />
             			<Route path="/store/accessories" exact={true} component={Accessories} />
-						<Route path="/students" exact={true} component={Students} />	
+						<Route path="/students" exact={true} component={Students} />
+						<Route path="/api/students/findStudent" exact={true} component={ApplicationForm} />
+						<Route path="/students/find" exact={true} component={FindStudent} />
 						<Footer />
 					</Fragment>
 				</Router>

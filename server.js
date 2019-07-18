@@ -10,7 +10,7 @@ const students = require('./routes/api/students');
 const { mongoURI } = require('./config/keys');
 const port = process.env.PORT || 5000;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true, useCreateIndex: true })
     .then(() => console.log('Database Connected!'))
     .catch(err => console.log(err));
 

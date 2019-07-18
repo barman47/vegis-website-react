@@ -7,7 +7,8 @@ import M from 'materialize-css';
 
 import isEmpty from '../validation/is-empty';
 
-import { registerStudent } from '../actions/studentActions';
+import { registerStudent, clearErrors, clearStudent } from '../actions/studentActions';
+import { hideModal } from '../actions/modalActions';
 
 import SuccessModal from './modals/Modal';
 import TextInputGroup from './inputGroups/TextInputGroup';
@@ -67,12 +68,14 @@ class Students extends Component {
 
     componentWillReceiveProps (nextProps) {
         if (!isEmpty(nextProps.errors)) {
+            console.log('nextProps');
             this.setState({
                 errors: nextProps.errors,
                 buttonText: 'Submit Data and Continue',
                 disabled: false
             });
             if (nextProps.errors.userExists) {
+                console.log('nextProps');
                 this.setState({
                     disabled: false
                 });
@@ -87,6 +90,7 @@ class Students extends Component {
         }
 
         if (!isEmpty(nextProps.student) && isEmpty(nextProps.errors.userExists)) {
+            console.log('nextProps');
             this.setState(prevState => ({
                 registrationNumber: nextProps.student.studentId,
                 showModal: !prevState.showModal,
@@ -144,6 +148,9 @@ class Students extends Component {
             errors: {},
             student: {}
         }));
+        this.props.clearErrors();
+        this.props.clearStudent();
+        this.props.hideModal();
         this.props.history.push('/');
     }
 
@@ -218,7 +225,7 @@ class Students extends Component {
                                     inputErrorMessage={errors.name}
                                 />
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-cellphone-android prefix"
                                     name="phone"
                                     id="phone"
                                     value={this.state.phone}
@@ -229,7 +236,7 @@ class Students extends Component {
                             </div>
                             <div className="row">
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-email-outline prefix"
                                     name="email"
                                     id="email"
                                     value={this.state.email}
@@ -283,7 +290,7 @@ class Students extends Component {
                                     dateErrorMessage={errors.dateOfBirth}
                                 />
                                 <div className="input-field col s12 m6 l6">
-                                    <span className="mdi mdi-github-circle prefix"></span>
+                                    <span className="mdi mdi-office-building prefix"></span>
                                     <textarea 
                                         id="address" 
                                         name="address" 
@@ -308,7 +315,7 @@ class Students extends Component {
                                     />
                                 </div>
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-home prefix"
                                     name="lga"
                                     id="lga"
                                     value={this.state.lga}
@@ -333,7 +340,7 @@ class Students extends Component {
 
                                 />
                                 <div className="input-field col s12 m6 l6">
-                                    <span className="mdi mdi-github-circle prefix"></span>
+                                    <span className="mdi mdi-office-building prefix"></span>
                                     <textarea 
                                         id="nextOfKinAddress" 
                                         name="nextOfKinAddress" 
@@ -351,7 +358,7 @@ class Students extends Component {
                             </div>
                             <div className="row">
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-cellphone-android prefix"
                                     name="nextOfKinPhone"
                                     id="nextOfKinPhone"
                                     value={this.state.nextOfKinPhone}
@@ -360,7 +367,7 @@ class Students extends Component {
                                     inputErrorMessage={errors.nextOfKinPhone}
                                 />
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-email-outline prefix"
                                     name="nextOfKinEmail"
                                     id="nextOfKinEmail"
                                     value={this.state.nextOfKinEmail}
@@ -371,7 +378,7 @@ class Students extends Component {
                             </div>
                             <div className="row">
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-worker prefix"
                                     name="nextOfKinOccupation"
                                     id="nextOfKinOccupation"
                                     value={this.state.nextOfKinOccupation}
@@ -380,7 +387,7 @@ class Students extends Component {
                                     inputErrorMessage={errors.nextOfKinOccupation}
                                 />
                                 <TextInputGroup 
-                                    icon="mdi mdi-account prefix"
+                                    icon="mdi mdi-account-multiple prefix"
                                     name="relationship"
                                     id="relationship"
                                     value={this.state.relationship}
@@ -461,7 +468,9 @@ class Students extends Component {
 }
 
 Students.propTypes = {
+    clearErrors: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
+    hideModal: PropTypes.func.isRequired,
     registerStudent: PropTypes.func.isRequired
 };
 
@@ -470,4 +479,4 @@ const mapStateToProps = (state) => ({
     student: state.student
 });
 
-export default connect(mapStateToProps, { registerStudent })(Students);
+export default connect(mapStateToProps, {  clearErrors, clearStudent, hideModal, registerStudent })(Students);

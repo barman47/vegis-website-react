@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const StateOfOriginInput = ({ value, onChange, stateOfOriginErrorMessage }) => (
     <Fragment>
-        <span className="mdi mdi-github-circle prefix"></span>
+        <span className="mdi mdi-map-marker prefix"></span>
         <select 
             className={classnames('validate required', {
                 'invalid': stateOfOriginErrorMessage
