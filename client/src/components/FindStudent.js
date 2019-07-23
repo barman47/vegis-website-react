@@ -44,10 +44,10 @@ class FindStudent extends Component {
             <div>
                 <form className="find-student-form" onSubmit={this.onSubmit} noValidate>
                     <div className="row find-student__student-number">
-                        <h1 style={{ textAlign: 'center' }}><span className="mdi mdi-account-search search-student-icon"></span></h1>
+                        <h1 className="icon-header" style={{ textAlign: 'center' }}><span className="mdi mdi-account-search search-student-icon"></span></h1>
                         <h1 style={{ fontSize: '2.5rem', textAlign: 'center' }}>Find Student</h1>
                         <div className="col s12 input-field">
-                            <span className="mdi mdi-github-circle prefix"></span>
+                            <span className="mdi mdi-account prefix"></span>
                             <input
                                 type="text"
                                 className={classnames('validate', {

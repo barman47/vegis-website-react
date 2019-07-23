@@ -1,16 +1,31 @@
 .application-form {
-    // background-color: #fff;
-    border: 1px solid lighten($light-gray, 30%);
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
+    background-color: #fff;
+    font-family: $quicksand;
     margin-top: $xxl-size !important;
     margin-bottom: $xxl-size !important;
+    padding-bottom: $sm-size;
 
-    .passport-section {
-        border: 2px solid $light-black;
-        width: 100px;
-        height: 150px;
+    .logo2 {
+        height: 3rem;
+        margin-bottom: $lg-size;
+        margin-top: $sm-size;
+    }
+
+    .passport-section img {
+        margin-top: $sm-size;
+        width: 9.75rem;
+        height: 9.75rem
+    }
+
+    h3 {
+        font-size: $md-size;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-size: 1.3rem;
     }
 
     .form-section {
@@ -19,11 +34,6 @@
         margin: $xl-size;
         padding-left: $md-size;
         padding-right: $md-size;
-
-        h4 {
-            text-align: center;
-            margin-bottom: $lg-size;
-        }
 
         label {
             color: $light-black;
@@ -53,31 +63,67 @@
 }
 
 @media (max-width: $md-breakpoint) {
+    .application-form {
+        background-color: transparent;
+    }
     .head-section {
         display: flex;
-        align-items: center;
-        text-align: justify;
         flex-direction: column;
     }
 
-    .head-section h1 {
-        text-align: justify;
-        margin-top: 0.5rem !important;
+    .head-section .passport-section {
+        margin-left: 27% !important;
     }
 
-    .passport-section {
-        width: 15rem !important;
-        height: 15rem !important;
-        margin-left: 0 !important;
+    .head-section .logo2 {
+        margin-left: 18%;
     }
     .application-form {
         border: none;
     }
 
     .form-section {
+
         margin: 0 !important;
         padding-left: 0;
         padding-right: 0;
         margin-bottom: $lg-size !important;
+    }
+
+    #printButton {
+        display: none;
+    }
+}
+
+@media print {
+    header, footer, #printButton {
+        display: none !important;
+    }
+
+    .application-form {
+        border: none;
+    }
+
+    .application-form .form-section h4, h3, .label-content, .text-content {
+        font-size: 12px !important;
+    }
+
+    .application-form h3, .form-section h4 {
+        font-size: 14px !important;
+        font-weight: bolder !important;
+    }
+    
+    .head-section {
+        display: flex !important;
+        flex-direction: row;
+        margin-top: -$xxl-size;
+    }
+
+    .passport-section img {
+        margin-right: $lg-size;
+    }
+
+    .form-section {
+        margin-bottom: $sm-size !important;
     }
 }

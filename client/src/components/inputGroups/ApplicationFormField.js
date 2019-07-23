@@ -5,10 +5,10 @@ const ApplicationFormField = ({ label1, content1, label2, content2, id1, id2 }) 
     <Fragment>
         <div className="row">
             <div className="col s12 m6 l6">
-                <label htmlFor="name">{label1}: &nbsp;<span id="name" className="text-content">{content1}</span></label>
+                <label className="label-content" htmlFor="name">{label1}: &nbsp;<span id="name" className="text-content">{content1}</span></label>
             </div>
             <div className="col s12 m6 l6">
-                <label htmlFor={id2}>{label2}: &nbsp;<span id={id2} className="text-content">{content2}</span></label>
+                <label className="label-content" htmlFor={id2}>{label2}: &nbsp;<span id={id2} className="text-content">{content2}</span></label>
             </div>
         </div>
     </Fragment>

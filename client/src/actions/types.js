@@ -9,3 +9,5 @@ export const SHOW_MODAL = 'SHOW_MODAL';
 export const ACTIVATED_STUDENT = 'ACTIVATED_STUDENT';
 export const CLEAR_STUDENT = 'CLEAR_STUDENT';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const YES_NETWORK = 'YES_NETWORK';
+export const NO_NETWORK = 'NO_NETWORK';

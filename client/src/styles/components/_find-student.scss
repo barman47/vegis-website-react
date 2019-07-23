@@ -1,14 +1,15 @@
 .find-student-form {
+    font-family: $quicksand;
+    
     .search-student-icon {
         font-size: $xxl-size;
     }
+
     background-color: $off-white;
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
-    // box-shadow: ;
     margin: $lg-size auto;
     padding: $md-size $lg-size;
-    // text-align: center;
     width: 35%;
 
     .row {
@@ -22,9 +23,13 @@
 
 @media (max-width: $md-breakpoint) {
     .find-student-form {
-        // margin-left: $sm-size !important;
-        // margin-right: $sm-size !important;
+        padding-left: $xs-size;
+        padding-right: $xs-size;
         margin: $md-size auto;
-        width: 80%;
+        width: 90%;
+    }
+
+    .icon-header {
+        margin-top: 0 !important;
     }
 }

@@ -4,6 +4,11 @@
     img {
         width: 80%;
         border-radius: 50%;
+        transition: 0.8s linear transform;
+    }
+
+    img:hover {
+        transform: scale(0.95);
     }
 
     p {

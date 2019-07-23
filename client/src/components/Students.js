@@ -87,6 +87,18 @@ class Students extends Component {
                     }
                 });   
             }
+
+            if (nextProps.network === false) {
+                this.setState({
+                    disabled: true
+                });
+            }
+
+            if (nextProps.network === false || this.state.disabled === false) {
+                this.setState({
+                    disabled: true
+                });
+            }
         }
 
         if (!isEmpty(nextProps.student) && isEmpty(nextProps.errors.userExists)) {
@@ -107,10 +119,19 @@ class Students extends Component {
     };
 
     handleCheckboxChange = () => {
-        this.setState({
-            disabled: !this.state.disabled,
-            agree: !this.state.agree
-        });
+        if (this.props.network === false) {
+            this.setState({
+                disabled: true,
+                agree: false
+            });
+        }
+
+        if (this.props.network === true) {
+            this.setState({
+                disabled: false,
+                agree: true
+            });
+        }
     }
 
     handleDateChange = () => {
@@ -476,6 +497,7 @@ Students.propTypes = {
 
 const mapStateToProps = (state) => ({
     errors: state.errors,
+    network: state.network,
     student: state.student
 });
 

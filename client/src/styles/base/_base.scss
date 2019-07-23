@@ -122,11 +122,14 @@ body {
 .modal-container {
     background-color:  $off-white;
     border-radius: 5px;
-    padding: $sm-size $lg-size $lg-size $lg-size;
+    padding: $md-size;
+    // padding: $sm-size $lg-size $lg-size $lg-size;
     overflow-y: hidden;
 }
 
 .modal-header {
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid $lighter-gray;
     color: darken($success-text, 5%);
     padding-bottom: $md-size;

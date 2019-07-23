@@ -3,7 +3,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
     font-family: $quicksand;
-    margin: 10rem $xxl-size;
+    margin: $xxl-size;
     padding: $md-size $lg-size $xl-size $lg-size;
 
     h2 {
@@ -82,12 +82,10 @@
 
 @media (max-width: $md-breakpoint) {
     .add-student-form {
-        margin-top: 6rem;
-        margin-bottom: $lg-size;
-        margin-left: $md-size;
-        margin-right: $md-size;
-        padding: $sm-size 0.5rem $lg-size 0.5rem;
+        margin: $lg-size $md-size;
+        padding: $sm-size $xs-size;
     }
+    
     .add-student-form h2 {
         font-size: 2rem;
         text-align: center;

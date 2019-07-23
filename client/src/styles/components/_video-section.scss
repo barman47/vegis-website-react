@@ -37,6 +37,15 @@
     text-align: center;
 }
 
+.vegis {
+    color: $off-white;
+}
+
+.tech {
+    color: $orange;
+    border-bottom: 4px solid $off-white;
+}
+
 .txt-type > .txt {
     border-right: 0.2rem solid #fff;
     font-family: $raleway;

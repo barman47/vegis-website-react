@@ -93,7 +93,7 @@ router.post('/findStudent', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    Student.findOne({studentId: req.body.studentNumber})
+    Student.findOne({ studentId: req.body.studentNumber, activated: true })
         .then(student => {
             if (!student) {
                 errors.studentNumber = 'Student not Found';

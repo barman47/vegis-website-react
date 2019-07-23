@@ -1,0 +1,24 @@
+.offline-message {
+    background-color: lighten($error-text, 10%);
+    border: 1px solid $error-text;
+    border-radius: 5px;
+    opacity: 0.8;
+    color: $off-white;
+    display: flex;
+    flex-direction: column;
+    font-family: $quicksand;
+    align-items: center;
+    padding: $sm-size $xs-size;
+    margin: $sm-size auto;
+    width: 20vw;
+
+    .network-signal {
+        font-size: $md-size;
+    }
+}
+
+@media (max-width: $md-breakpoint) {
+    .offline-message {
+        width: 80vw;
+    }
+}

@@ -89,7 +89,7 @@ class ActivateStudentModal extends Component {
             <div style={style} id="modal" className="success-modal">
                 <div className="modal-container">
                     <div className="modal-content">
-                        <h4 className="modal-header">Activate Student<span onClick={this.closeModal} style={{ marginLeft: '20px' }} className="mdi mdi-close right close-icon"></span></h4>
+                        <h4 className="modal-header">Activate Student<span onClick={this.closeModal} style={{ marginLeft: '20px' }} className="mdi mdi-close close-icon"></span></h4>
                         <form onSubmit={this.onSubmit} noValidate>
                             <div className="row">
                                 <TextInputGroup 

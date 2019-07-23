@@ -57,7 +57,7 @@ class VideoSection extends Component {
                 </div>
                 <div className="header-overlay"></div>
                 <div className="header-content">
-                    <h1>Vegistech</h1>
+                    <h1><span className="vegis">Vegis</span><span className="tech">tech</span></h1>
                     <p className="txt-type"></p>
                     <p className="txt-type"><span id="typewriter-text">We ensure speedy and reliable delivery for our products and services . . . . . . </span></p>
                     <NavLink id="readMore" to="/about" className="btn btn-large">Read More</NavLink>
