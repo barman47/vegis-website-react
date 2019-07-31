@@ -38,7 +38,11 @@ export const registerStudent = (studentData) => (dispatch) => {
 };
 
 export const activateStudent = (studentInfo) => (dispatch) => {
-    axios.post('/api/students/activateStudent', studentInfo)
+    axios.post('/api/students/activateStudent', studentInfo/*, {
+        headers: {
+            'Content-Type': 'multipart-form-data'
+        }
+    }*/)
         .then(res => dispatch({
             type: ACTIVATED_STUDENT,
             payload: res.data
@@ -67,7 +71,6 @@ export const findStudent = (data, history) => (dispatch) => {
                 type: FOUND_STUDENT,
                 payload: res.data
             });
-            console.log(res.data);
             history.push('/api/students/findStudent');
         })
         .catch(err => {

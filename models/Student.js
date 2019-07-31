@@ -92,6 +92,11 @@ const StudentSchema = new Schema({
         required: true
     },
 
+    passport: {
+        data: Buffer,
+        contentType: String
+    },
+
     studentId: {
         type: String,
         required: true

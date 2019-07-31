@@ -78,8 +78,8 @@ class Navigation extends Component {
                             <NavLink to="#" data-target="mobile-nav" className="sidenav-trigger"><span id="menu-icon" className="mdi mdi-menu"></span></NavLink>
                             <ul className="right hide-on-med-and-down">
                                 <li><NavLink onMouseOver={this.hideMenu} className="links" to="/">Home</NavLink></li>
+                                <li><NavLink className="links" to="/courses">Courses</NavLink></li>
                                 <li><NavLink onMouseOver={this.hideMenu} className="links" to="/store/laptops">Store</NavLink></li>
-                                {/* <li><NavLink className="links" to="/courses">Courses</NavLink></li> */}
                                 <li><NavLink onClick={this.showMenu} onMouseOver={this.showMenu} className="links" to="#!">
                                     Students
                                     </NavLink>
@@ -105,8 +105,8 @@ class Navigation extends Component {
                     </nav>
                     <ul className="sidenav" id="mobile-nav">
                         <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/">Home</NavLink></li>
+                        <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links store" to="/courses">Courses</NavLink></li>
                         <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/store/laptops">Store</NavLink></li>
-                        {/* <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links store" to="/courses">Courses</NavLink></li> */}
                         <li><NavLink id="mobile-dropdown" onClick={this.showMenu} onMouseEnter={this.showMenu} className="links mobile-link" to="#!">
                             Students
                             </NavLink>

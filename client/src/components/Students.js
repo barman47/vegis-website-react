@@ -39,6 +39,7 @@ class Students extends Component {
             SIWES: '',
             regular: '',
             courseChoice: '',
+            // passport: {},
             disabled: true,
             agree: false,
             errors: {},
@@ -52,7 +53,14 @@ class Students extends Component {
         let elems = document.querySelectorAll('.datepicker');
         //eslint-disable-next-line
         let instances = M.Datepicker.init(elems, {
-            autoClose: true
+            autoClose: true,
+            format: 'dddd dd mmmm, yyyy',
+            i18n: {
+                months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+                weekdays: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+            },
+            maxDate: new Date('December 31, ' + new Date().getFullYear()),
+            yearRange: 60
         });
 
         let elems2 = document.querySelectorAll('select');
@@ -102,7 +110,6 @@ class Students extends Component {
         }
 
         if (!isEmpty(nextProps.student) && isEmpty(nextProps.errors.userExists)) {
-            console.log('nextProps');
             this.setState(prevState => ({
                 registrationNumber: nextProps.student.studentId,
                 showModal: !prevState.showModal,
@@ -205,9 +212,10 @@ class Students extends Component {
                 nextOfKinOccupation: this.state.nextOfKinOccupation,
                 relationship: this.state.relationship,
                 course: this.state.course,
-                courseType: this.state.courseType,
+                courseType: this.state.courseType
+                // passport: this.state.passport
             };
-            this.props.registerStudent(student, {});
+            this.props.registerStudent(student);
         }, 500);
     }
 
@@ -230,7 +238,7 @@ class Students extends Component {
                         regNumber={this.state.registrationNumber ? this.state.registrationNumber : ''}
                         toggle={this.toggleModal}
                     />
-                    <form className="add-student-form" onSubmit={this.onSubmit} noValidate>
+                    <form className="add-student-form" encType="multipart/form-data" onSubmit={this.onSubmit} noValidate>
                         <h2>Student Application Form</h2>
                         <div className="personal-info">
                             <h5>Personal Information</h5>
@@ -239,7 +247,6 @@ class Students extends Component {
                                     icon="mdi mdi-account prefix"
                                     name="name"
                                     id="name"
-                                    autoFocus={true}
                                     value={this.state.name}
                                     label="Student Name"
                                     onChange={this.onChange}
@@ -454,6 +461,30 @@ class Students extends Component {
                                     {this.state.regular && <div><RegularDropdown value={this.state.course} onChange={this.onChange} courseErrorMessage={errors.course} /></div>}
                                 </div>
                             </div>
+                            {/* <div className="row">
+                                <div className="col s12 file-field input-field">
+                                    <div className="btn">
+                                        <span>Add Passport</span>
+                                        <input 
+                                            type="file" 
+                                            accept=".jpg"
+                                            name="passport"
+                                            onChange={this.onChange} 
+                                        />
+                                        </div>
+                                    <div className="file-path-wrapper">
+                                        <input 
+                                            className="file-path validate" 
+                                            type="text" 
+                                            // value={this.state.passport}
+                                            name="passport"
+                                            onChange={this.onChange}
+                                            placeholder="Passport here" 
+                                        />
+                                        <span className="helper-text invalid">{errors.passport}</span>
+                                    </div>
+                                </div>
+                            </div> */}
                             <div className="row">
                                 <div className="col s12 input-field submit-button-section">
                                     <p className="agree-text">

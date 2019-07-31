@@ -1,0 +1,38 @@
+.courses {
+    font-family: $quicksand;
+
+    .card.large {
+        height: 400px;
+    }
+
+    .card .course-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card .card-content {
+        // padding: $sm-size;
+    }
+
+    .card-content p {
+        font-weight: bold;
+    }
+
+    .card .card-action {
+        position: relative;
+    }
+
+    .card-action .apply {
+        background: $orange;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        color: $off-white !important;
+        font-family: $quicksand;
+        padding: $xs-size $md-size;
+    }
+
+    .card-action .apply:hover {
+        background: darken($orange, 5%);
+        
+    }
+}

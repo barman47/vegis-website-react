@@ -37,6 +37,10 @@
     text-align: center;
 }
 
+.header-content h1 {
+    font-family: $quicksand;
+}
+
 .vegis {
     color: $off-white;
 }
@@ -46,9 +50,15 @@
     border-bottom: 4px solid $off-white;
 }
 
-.txt-type > .txt {
-    border-right: 0.2rem solid #fff;
-    font-family: $raleway;
+.txt-type {
+    font-family: $wire-one;
+    color: $border-color;
+    font-size: 2rem;
+    margin-bottom: $sm-size;
+}
+
+.cursor {
+    color: red !important;
 }
 
 #readMore {

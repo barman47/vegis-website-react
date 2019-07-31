@@ -8,7 +8,6 @@ const TextInputGroup = ({
     inputErrorMessage,
     name,
     id,
-    autoFocus,
     value,
     onChange,
     label
@@ -24,7 +23,6 @@ const TextInputGroup = ({
             name={name}
             id={id}
             onChange={onChange}
-            autoFocus={autoFocus}
             value={value}
             required
         />
@@ -38,7 +36,6 @@ TextInputGroup.propTypes = {
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    autoFocus: PropTypes.bool,
     value: PropTypes.string.isRequired,
     inputErrorMessage: PropTypes.string,
     icon: PropTypes.string.isRequired
@@ -46,8 +43,7 @@ TextInputGroup.propTypes = {
 
 TextInputGroup.defaultProps = {
     disabled: 'false',
-    type: 'text',
-    autoFocus: false,
+    type: 'text'
 };
 
 export default TextInputGroup;

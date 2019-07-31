@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
 router.post('/registerStudent', (req, res) => {
     const { errors, isValid } = validateStudentRegisterInput(req.body);
 
+    // console.log(req.body.passport);
+
     if(!isValid) {
         return res.status(400).json(errors);
     }
@@ -61,6 +63,7 @@ router.post('/registerStudent', (req, res) => {
         relationship: req.body.relationship.toUpperCase(),
         course: req.body.course,
         courseType: req.body.courseType,
+        // passport: req.body.passport,
         studentId: id
     });
 

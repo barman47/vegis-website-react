@@ -22,7 +22,7 @@ module.exports = function validateStudentRegisterInput(data) {
     data.course = !isEmpty(data.course) ? data.course : '';
     data.courseType = !isEmpty(data.courseType) ? data.courseType : '';
     data.studentId = !isEmpty(data.studentId) ? data.studentId : '';
-    data.photo = !isEmpty(data.photo) ? data.photo : '';
+    // data.passport = !isEmpty(data.passport) ? data.passport : '';
 
     if(!Validator.isLength(data.name, { min: 2, max: 50 })) {
         errors.name = 'Invalid Name';
@@ -183,6 +183,10 @@ module.exports = function validateStudentRegisterInput(data) {
     if (Validator.isEmpty(data.courseType)) {
         errors.courseType = 'Please Select course type';
     }
+
+    // if (Validator.isEmpty(data.passport)) {
+    //     errors.passport = 'Passport is required';
+    // }
 
     return {
         errors,
