@@ -10,6 +10,13 @@ import MySQL from './components/MySQL';
 import Java from './components/Java';
 import JavaScript from './components/JavaScript';
 import WebDevelopment from './components/WebDevelopment';
+import MongoDB from './components/MongoDB';
+import SQLite from './components/SQLite';
+import NodeExpressMongoDB from './components/NodeExpressMongoDB';
+import DesktopPublishing from './components/DesktopPublishing';
+import VBMasterClass from './components/VBMasterClass';
+import VisualBasic from './components/VisualBasic';
+import AppsThatSell from './components/AppsThatSell';
 import About from './components/About';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
@@ -25,7 +32,6 @@ import FindStudent from './components/FindStudent';
 
 import { Provider } from 'react-redux';
 import store from './store';
-
 
 class App extends Component {
 	render () {
@@ -53,6 +59,13 @@ class App extends Component {
 						<Route path="/courses/a-complete-guide-to-programming-in-java" exact={true} component={Java} />
 						<Route path="/courses/learn-javascript-from-novice-to-professional" exact={true} component={JavaScript} />
 						<Route path="/courses/web-development-a-beginners-guide" exact={true} component={WebDevelopment} />
+						<Route path="/courses/mongodb-essentials" exact={true} component={MongoDB} />
+						<Route path="/courses/sqlite-made-easy" exact={true} component={SQLite} />
+						<Route path="/courses/nodejs-expressjs-mongodb-from-development-to-deployment" exact={true} component={NodeExpressMongoDB} />
+						<Route path="/courses/complete-desktop-publishing-masterclass" exact={true} component={DesktopPublishing} />
+						<Route path="/courses/visual-basic-dot-net-masterclass" exact={true} component={VBMasterClass} />
+						<Route path="/courses/visual-basic-programming-with-windows-forms-apps" exact={true} component={VisualBasic} />
+						<Route path="/courses/learn-and-make-app-that-sells-using-visual-basic" exact={true} component={AppsThatSell} />
 						<Footer />
 					</Fragment>
 				</Router>

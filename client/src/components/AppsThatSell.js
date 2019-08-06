@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { applyForCourse } from '../actions/courseActions';
 
-import src from '../img/mysql.png';
+import src from '../img/apps-that-sell.png';
 
 class AppsThatSell extends Component {
     constructor (props) {
@@ -63,7 +63,9 @@ class AppsThatSell extends Component {
                             </div>
                             <div className="col s12 m8 l8">
                                 <h3>{this.state.title}</h3>
-                                <p>Database design is a must-have skill for anyone willing to persist data from their application to a database. This course is intended to provide an individual with the neccessary knowledge to use MySQL database with any programming knowledge of your choice.</p>
+                                <p>
+                                If it's thinkable, it's workable. Learn to build applications to handle daily business tasks. This course enables you build apps that are responsive and reliable using visual basic.
+                                </p>
                             </div>
                         </div>
                     </section>
@@ -72,24 +74,26 @@ class AppsThatSell extends Component {
                             <div className="left__section">
                                 <h4>About this Course</h4>
                                 <p>
-                                    When we talk about web programming, one of the important aspect of it that should come to mind is Database Design. Proper and successful implementation of any system with Data Storage will always require proper database design. To create a database, you need to have a full knowledge of Database technology, as well as the design process and the normalization. This course has different levels with MySQL, starting from level zero, which is the basic introduction level to advanced level which is the professional level in Database Design. So panic not because this cause is going to take you from a Database Design novice to a Database Design professional.
+                                    If you are new to programming and want to be able to develop different kind of applications that sell, with or without database, this course will teach you step by step with practical exercises during each lesson.
+                                    In this course you will learn basic to advanced programming techniques using Windows Forms. You will create a Database Applications in which you will Add, Delete, and Modify records in database through from application. 
+                                    Af th end of the course, you will be able to develop an applications that will sell with a professional interface.
                                 </p>
                             </div>
                             <div className="left__section">
                                 <h4>What You'll Learn</h4>
                                 <ul>
-                                    <li>Visual Basic and its environment.</li>
-                                    <li>What it is used for.</li>
-                                    <li>Visual Basic syntax.</li>
-                                    <li>How to make client-ready applications with Visual Basic.</li>
+                                    <li>Create a standard application independently.</li>
+                                    <li>Create application with a database.</li>
+                                    <li>Design User Friendly Application Interface.</li>
+                                    <li>Program in Visual Basic like a boss.</li>
                                 </ul>
                             </div>
                             <div className="left__section">
                                 <h4>Prerequisites</h4>
                                 <ul>
-                                    <li>The will to learn.</li>
-                                    <li>No prior programming experience required.</li>
-                                    <li>A PC.</li>
+                                    <li>Basic computer knowledge and skills.</li>
+                                    <li>Passion for programming.</li>
+                                    <li>Passion to learn.</li>
                                 </ul>
                             </div>
                         </div>

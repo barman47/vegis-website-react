@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 
 import { applyForCourse } from '../actions/courseActions';
 
-import src from '../img/js.png';
+import src from '../img/mongodb.jpg';
 
-class WebDevelopment extends Component {
+class MongoDB extends Component {
     constructor (props) {
         super(props);
         this.state = {
             type: 'SIWES',
-            title: 'Web Development: A beginner’s Guide',
-            duration: '24 Weeks',
-            effort: '15 - 22 Hours per week',
+            title: 'MongoDB Essentials',
+            duration: '8 Weeks',
+            effort: '8 - 12 Hours per week',
             level: 'Advanced',
         };
     }
@@ -64,7 +64,7 @@ class WebDevelopment extends Component {
                             <div className="col s12 m8 l8">
                                 <h3>{this.state.title}</h3>
                                 <p>
-                                    Web development is the coding or programming that enables website functionality, per the owner's requirements. It mainly deals with the non-design aspect of building websites, which includes coding and writing markup. 
+                                    Master database design with the most popular and modern NoSQL database and use it with any project of your choice. 
                                 </p>
                             </div>
                         </div>
@@ -74,39 +74,29 @@ class WebDevelopment extends Component {
                             <div className="left__section">
                                 <h4>About this Course</h4>
                                 <p>
-                                    Web programming, also known as web development, is the creation of dynamic web applications. Examples of web applications are social networking sites like Facebook or e-commerce sites like Amazon. The good news is that learning web development is not that hard!
-                                    This course takes you from the basics of web development <strong>(HTML, CSS, JavaScript)</strong> to more advanced concepts like server-side technologies, frameworks, databases and web site deployment. At the end of the course you'll be fully equiped with knowledge to build whatever kind of website or web app you choose to build.
+                                    MongoDB is one of the most important databases you can work with these days. It's extremely popular and MongoDB developers are in high demand.
+                                    No matter if you're building web applications, mobile applications or any other kind of application or if you're a data scientist - you'll need to work with data. Storing data, querying it efficiently and minimizing complexities whilst optimizing performance are crucial tasks.
+                                    MongoDB makes working with data simple - it's built on a philosophy that prioritizes performance and efficiency.
+                                    In this course, you'll learn all about MongoDB from scratch. <strong>No prior MongoDB or database experience is required!</strong>
                                 </p>
                             </div>
                             <div className="left__section">
                                 <h4>What You'll Learn</h4>
                                 <ul>
-                                    <li>Build websites and webapps.</li>
-                                    <li>Be proficient with databases and server-side languages.</li>
-                                    <li>Web Frameworks to make development faster.</li>
-                                    <li>Manipulate the DOM with vanilla JS.</li>
-                                    <li>Manipulate the DOM using jQuery.</li>
-                                    <li>Use NodeJS to write server-side JavaScript.</li>
-                                    <li>Write a REAL application using everything in the course.</li>
-                                    <li>Use common JS data structures like Arrays and Objects.</li>
-                                    <li>Create a beautiful, responsive landing page for a startup.</li>
-                                    <li>Use JavaScript variables, conditionals, loops, functions, arrays, and objects.</li>
-                                    <li>Create complex HTML forms with validations.</li>
-                                    <li>Use Express and MongoDB to create full-stack JS applications.</li>
-                                    <li>Create full-stack web applications from scratch.</li>
-                                    <li>How to integrate version control with git in your applications.</li>
-                                    <li>Master the command line interface.</li>
-                                    <li>Implement user authentication.</li>
-                                    <li>Continue to learn and grow as a developer, long after the course ends.</li>
+                                    <li>Understand how MongoDB stores data.</li>
+                                    <li>Write efficient queries for reading data.</li>
+                                    <li>Gain mastery of the most popular MongoDB interface, Mongoose JS.</li>
+                                    <li>Learn the purpose of each of Mongoose's functions.</li>
+                                    <li>Write efficient and well-performing queries to fetch data in the format you need it.</li>
+                                    <li>Use all features MongoDB offers you to work with data efficiently.</li>
                                 </ul>
                             </div>
                             <div className="left__section">
                                 <h4>Prerequisites</h4>
                                 <ul>
-                                    <li>Have a computer with internet.</li>
-                                    <li>Be ready to learn an insane amount of awesome stuff.</li>
-                                    <li>Be ready to learn and unlearn stuff.</li>
-                                    <li>That's it, you're all set and ready to get rolling.</li>
+                                    <li>NO prior knowledge on databases (of any kind) is required.</li>
+                                    <li>General web development or mobile development knowledge will help you but is not a must-have.</li>
+                                    <li>All you need is a Computer.</li>
                                 </ul>
                             </div>
                         </div>
@@ -159,4 +149,4 @@ const mapStateToProps = (state) => ({
     course: state.course
 });
 
-export default connect(mapStateToProps, { applyForCourse })(WebDevelopment);
+export default connect(mapStateToProps, { applyForCourse })(MongoDB);

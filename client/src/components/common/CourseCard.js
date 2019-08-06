@@ -18,7 +18,7 @@ const CourseCard = ({
                 <p>{title}</p>
             </div>
             <div className="card-action">
-                <NavLink className="info" to={to}>Info</NavLink>
+                <NavLink className="info" to={to}>Course Details</NavLink>
             </div>
         </div>
     </div>

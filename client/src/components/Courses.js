@@ -5,8 +5,10 @@ import { Helmet } from 'react-helmet';
 import accessDB from '../img/accessDB.png';
 import graphicsDesign from '../img/graphics.jpg';
 import internetTechnology from '../img/internet-technology.jpg';
+import desktopPublishing from '../img/desktop-publishing.jpg';
 import mysql from '../img/mysql.png';
-import visualBasic1 from '../img/visual-basic.png';
+import visualBasic from '../img/visual-basic.png';
+import appsThatSell from '../img/apps-that-sell.png';
 import vbMasterclass from '../img/vb-masterclass.png';
 import systemEngineering from '../img/system-engineering.jpg';
 import java from '../img/java.jpg';
@@ -60,7 +62,7 @@ class Courses extends Component {
                     </div>
                     <div className="row">
                         <CourseCard 
-                            src={visualBasic1}
+                            src={appsThatSell}
                             alt="Visual Basic"
                             title="Learn and make apps that sell using Visual Basic.NET"
                             to="/courses/learn-and-make-app-that-sells-using-visual-basic"
@@ -72,10 +74,10 @@ class Courses extends Component {
                             to="/courses/visual-basic-dot-net-masterclass"
                         />
                         <CourseCard 
-                            src={accessDB}
+                            src={visualBasic}
                             alt="Internet Technology Masterclass"
                             title="Visual Basic programming with windows form Apps"
-                            to="/courses/internet-technology-masterclass"
+                            to="/courses/visual-basic-programming-with-windows-forms-apps"
                         />
                         <CourseCard 
                             src={systemEngineering}
@@ -86,7 +88,7 @@ class Courses extends Component {
                     </div>
                     <div className="row">
                         <CourseCard 
-                            src={accessDB}
+                            src={desktopPublishing}
                             alt="Desktop Publishing Masterclass"
                             title="Complete Desktop Publishing Masterclass"
                             to="/courses/complete-desktop-publishing-masterclass"
