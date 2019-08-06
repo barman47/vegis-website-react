@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export const SiwesDropdown = ({ value, onChange, courseErrorMessage }) => (
+export const SiwesDropdown = ({ defaultValue, onChange, courseErrorMessage }) => (
     <Fragment>
         <select 
             className={classnames('validate', {
@@ -10,7 +10,7 @@ export const SiwesDropdown = ({ value, onChange, courseErrorMessage }) => (
             })}
             id="course" 
             name="course" 
-            value={value}
+            defaultValue={defaultValue}
             onChange={onChange}
             required
         >
@@ -18,7 +18,7 @@ export const SiwesDropdown = ({ value, onChange, courseErrorMessage }) => (
             <option value="A complete guide to programming in Java">A complete guide to programming in Java</option>
             <option value="Visual Basic.NET Master Class">Visual Basic.Net Master Class</option>
             <option value="Visual Basic programming with windows form Apps">Visual basic programming with windows form Apps</option>
-            <option value="Learn and make apps that sells using Visual Basic.NET">Learn and make apps that sells using Visual Basic.net</option>
+            <option value="Learn and make apps that sell using Visual Basic.NET">Learn and make apps that sells using Visual Basic.net</option>
             <option value="Learn JavaScript from Novice to Professional">Learn JavaScript from Novice to Professional</option>
             <option value="Web Development: A beginner’s Guide">Web Development: A beginner’s Guide</option>
             <option value="Learn Database Design with MySQL">Learn Database Design with MySQL</option>
@@ -33,12 +33,12 @@ export const SiwesDropdown = ({ value, onChange, courseErrorMessage }) => (
 );
 
 SiwesDropdown.propTypes = {
-    value: PropTypes.string.isRequired,
+    defaultValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     courseErrorMessage: PropTypes.string
 };
 
-export const RegularDropdown = ({ value, onChange, courseErrorMessage }) => (
+export const RegularDropdown = ({ defaultValue, onChange, courseErrorMessage }) => (
     <Fragment>
         <select 
             className={classnames('validate required', {
@@ -46,7 +46,7 @@ export const RegularDropdown = ({ value, onChange, courseErrorMessage }) => (
             })}
             id="course" 
             name="course" 
-            value={value}
+            defaultValue={defaultValue}
             onChange={onChange}
         >
             <option value="" disabled>Choose Course</option>
@@ -60,7 +60,7 @@ export const RegularDropdown = ({ value, onChange, courseErrorMessage }) => (
 );
 
 RegularDropdown.propTypes = {
-    value: PropTypes.string.isRequired,
+    defaultValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     courseErrorMessage: PropTypes.string
 };

@@ -18,7 +18,7 @@ const CourseCard = ({
                 <p>{title}</p>
             </div>
             <div className="card-action">
-                <NavLink className="apply" to={to}>Apply</NavLink>
+                <NavLink className="info" to={to}>Info</NavLink>
             </div>
         </div>
     </div>

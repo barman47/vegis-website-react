@@ -8,6 +8,7 @@ import M from 'materialize-css';
 import isEmpty from '../validation/is-empty';
 
 import { registerStudent, clearErrors, clearStudent } from '../actions/studentActions';
+import { clearCourse } from '../actions/courseActions';
 import { hideModal } from '../actions/modalActions';
 
 import SuccessModal from './modals/Modal';
@@ -66,9 +67,17 @@ class Students extends Component {
         let elems2 = document.querySelectorAll('select');
         // eslint-disable-next-line
         let instances2 = M.FormSelect.init(elems2);
+
+        if (!isEmpty(this.props.course)) {
+            this.handleSetCourse(this.props.course);
+        }
     }
 
-    componentDidUpdate (nextProps, nextState) {
+    componentWillUnmount () {
+        this.props.clearCourse();
+    }
+
+    componentDidUpdate () {
         let elems2 = document.querySelectorAll('select');
         // eslint-disable-next-line
         let instances2 = M.FormSelect.init(elems2);
@@ -148,7 +157,7 @@ class Students extends Component {
     }
 
     handleCourseType = (e) => {
-        switch (e.target.value) {
+        switch (e.target.value || this.props.course.type) {
             case 'SIWES':
                 this.setState({
                     courseType: 'SIWES',
@@ -160,13 +169,43 @@ class Students extends Component {
             case 'Regular':
                 this.setState({
                     courseType: 'Regular',
-                    regular: 'regular',
+                    regular: 'Regular',
                     SIWES: ''
                 });
                 break;
 
             default:
                 break;
+        }
+    }
+
+    handleSetCourse = (course) => {
+        const { type, title } = course;
+        switch (type) {
+            case 'Regular':
+                this.setState({
+                    course: title,
+                    courseType: type,
+                    regular: type,
+                    SIWES: ''
+                });
+                const regular = document.getElementById('regular');
+                regular.checked = true;
+                break;
+
+                case 'SIWES':
+                    this.setState({
+                        course: title,
+                        courseType: type,
+                        SIWES: type,
+                        regular: '',
+                    });
+                    const SIWES = document.getElementById('SIWES');
+                    SIWES.checked = true;
+                    break;
+
+                default: 
+                    break;
         }
     }
 
@@ -429,14 +468,14 @@ class Students extends Component {
                                     <p className="course-type">
                                         <span className="input-title">Choose Course Type</span>
                                         <br/><br/>
-                                        <label htmlFor="IT">
+                                        <label htmlFor="SIWES">
                                             <input 
                                                 type="radio" 
                                                 className="with-gap validate" 
                                                 name="courseType" 
                                                 value="SIWES" 
                                                 onChange={this.handleCourseType}
-                                                id="IT"
+                                                id="SIWES"
                                             />
                                             <span>SIWES</span>
                                         </label>
@@ -457,8 +496,25 @@ class Students extends Component {
                                 </div>
                                 <div className="col s12 m6 l6 input-field">
                                     <br/>
-                                    {this.state.SIWES && <div><SiwesDropdown value={this.state.course} onChange={this.onChange} courseErrorMessage={errors.course} /></div>}
-                                    {this.state.regular && <div><RegularDropdown value={this.state.course} onChange={this.onChange} courseErrorMessage={errors.course} /></div>}
+                                    {this.state.SIWES && 
+                                        <div>
+                                            <SiwesDropdown 
+                                                defaultValue={this.state.course} 
+                                                onChange={this.onChange} 
+                                                courseErrorMessage={errors.course} 
+                                                // checked={this.state.handleSetCourse ? this.state.handleSetCourse : 'false'}
+                                            />
+                                        </div>
+                                    }
+                                    {this.state.regular && 
+                                        <div>
+                                            <RegularDropdown 
+                                                defaultValue={this.state.course} 
+                                                onChange={this.onChange} 
+                                                courseErrorMessage={errors.course}
+                                            // checked={this.state.handleSetCourse ? this.state.handleSetCourse : 'false'}
+                                        />
+                                        </div>}
                                 </div>
                             </div>
                             {/* <div className="row">
@@ -520,16 +576,26 @@ class Students extends Component {
 }
 
 Students.propTypes = {
+    clearCourse: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired,
+    clearStudent: PropTypes.func.isRequired,
+    course: PropTypes.object,
     errors: PropTypes.object.isRequired,
     hideModal: PropTypes.func.isRequired,
     registerStudent: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
+    course: state.course,
     errors: state.errors,
     network: state.network,
     student: state.student
 });
 
-export default connect(mapStateToProps, {  clearErrors, clearStudent, hideModal, registerStudent })(Students);
+export default connect(mapStateToProps, {  
+    clearErrors, 
+    clearCourse, 
+    clearStudent, 
+    hideModal, 
+    registerStudent 
+})(Students);

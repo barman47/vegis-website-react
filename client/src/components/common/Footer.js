@@ -38,8 +38,8 @@ export default function Footer() {
                 <div className="footer-copyright__footer-links">
                     <ul id="footer-links">
                         <li><a href="#!"><span className="mdi mdi-instagram left footer-icon"></span></a></li>
-                        <li><a href="#!"><span className="mdi mdi-twitter left footer-icon"></span></a></li>
-                        <li><a href="#!"><span className="mdi mdi-facebook left footer-icon"></span></a></li>
+                        {/* <li><a href="#!"><span className="mdi mdi-twitter left footer-icon"></span></a></li> */}
+                        <li><a href="https://web.facebook.com/vegistech/?ref=br_rs" target="_blank" rel="noopener noreferrer"><span className="mdi mdi-facebook left footer-icon"></span></a></li>
                     </ul>
                 </div>
             </div>

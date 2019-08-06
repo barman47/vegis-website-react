@@ -11,3 +11,5 @@ export const CLEAR_STUDENT = 'CLEAR_STUDENT';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const YES_NETWORK = 'YES_NETWORK';
 export const NO_NETWORK = 'NO_NETWORK';
+export const CLEAR_COURSE = 'CLEAR_COURSE';
+export const SET_COURSE = 'SET_COURSE';
