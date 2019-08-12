@@ -11,7 +11,7 @@ class WebDevelopment extends Component {
         super(props);
         this.state = {
             type: 'SIWES',
-            title: 'Web Development: A beginner’s Guide',
+            title: 'Web Development: A beginner\'s Guide',
             duration: '24 Weeks',
             effort: '15 - 22 Hours per week',
             level: 'Advanced',
@@ -59,7 +59,7 @@ class WebDevelopment extends Component {
                     <section className="course-header">
                         <div className="row">
                             <div className="col s12 m4 l4">
-                                <img src={src} alt="Access Database for Beginners" className="course-image" />
+                                <img src={src} alt="Web Development: A beginner's Guide" className="course-image" />
                             </div>
                             <div className="col s12 m8 l8">
                                 <h3>{this.state.title}</h3>

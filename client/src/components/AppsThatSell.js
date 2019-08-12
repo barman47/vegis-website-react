@@ -59,12 +59,12 @@ class AppsThatSell extends Component {
                     <section className="course-header">
                         <div className="row">
                             <div className="col s12 m4 l4">
-                                <img src={src} alt="Access Database for Beginners" className="course-image" />
+                                <img src={src} alt="Learn and make apps that sell using Visual Basic.NET" className="course-image" />
                             </div>
                             <div className="col s12 m8 l8">
                                 <h3>{this.state.title}</h3>
                                 <p>
-                                If it's thinkable, it's workable. Learn to build applications to handle daily business tasks. This course enables you build apps that are responsive and reliable using visual basic.
+                                    If it's thinkable, it's workable. Learn to build applications to handle daily business tasks. This course enables you build apps that are responsive and reliable using visual basic.
                                 </p>
                             </div>
                         </div>

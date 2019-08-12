@@ -11,11 +11,17 @@
         margin-top: $sm-size;
     }
 
-    .passport-section img {
+    .passport-section {
         margin-top: $sm-size;
-        width: 9.75rem;
-        height: 9.75rem
+        width: 8rem;
+        height: 9.75rem;
+        border: 1px solid $light-black;
     }
+    // .passport-section img {
+    //     margin-top: $sm-size;
+    //     width: 9.75rem;
+    //     height: 9.75rem
+    // }
 
     h3 {
         font-size: $md-size;

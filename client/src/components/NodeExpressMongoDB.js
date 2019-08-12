@@ -59,7 +59,7 @@ class NodeExpressMongoDB extends Component {
                     <section className="course-header">
                         <div className="row">
                             <div className="col s12 m4 l4">
-                                <img src={src} alt="Access Database for Beginners" className="course-image" />
+                                <img src={src} alt="Node.js, Express.js & Mongo DB: From development to Deployment" className="course-image" />
                             </div>
                             <div className="col s12 m8 l8">
                                 <h3>{this.state.title}</h3>

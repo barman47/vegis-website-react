@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import { showModal } from '../actions/modalActions';
 import logo from '../img/logo2.png';
-import passport from '../img/me.jpg';
 
 import ApplicationFormField from './inputGroups/ApplicationFormField';
 
@@ -48,7 +47,7 @@ class ApplicationForm extends Component {
                             <img className="logo2" src={logo} alt="logo" />
                         </div>
                         <div className="col s12 m3 l3 passport-section">
-                            <img src={passport} alt={student.name + " Passport"}/>
+                            {/* <img src={passport} alt={student.name + " Passport"}/> */}
                         </div>
                     </div>
                     <h3>Course Application Form</h3>

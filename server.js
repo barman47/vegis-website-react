@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const secure = require('express-force-https');
 
 const path = require('path');
 
@@ -18,7 +19,8 @@ mongoose.connect(mongoURI, {
     .then(() => console.log('Database Connected!'))
     .catch(err => console.log(err));
 
-
+    
+app.use(secure);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'client', 'build')));

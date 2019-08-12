@@ -78,6 +78,15 @@
         color: $light-gray !important;
         font-weight: bold;
     }
+
+    #note {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(247, 67, 54);
+        color: $off-white;
+        margin-top: $sm-size;
+        padding: $sm-size;
+    }
 }
 
 @media (max-width: $md-breakpoint) {
@@ -114,5 +123,9 @@
 
     .course-type {
         text-align: center;
+    }
+
+    .warning-text {
+        text-align: justify;
     }
 }

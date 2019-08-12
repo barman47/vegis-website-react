@@ -555,6 +555,17 @@ class Students extends Component {
                                             <span></span>
                                         </label>
                                         <span className="agree">Check here to indicate that you have read and agree to Vegistech Student Policy.</span>
+                                        <span id="note">
+                                            <span className="mdi mdi-alert-circle-outline mdi-24px"
+                                                style={{
+                                                    position: 'relative',
+                                                    top: '-5px'
+                                                }}
+                                            >
+
+                                            </span>
+                                            <span className="warning-text">A registration number will be automatically generated for you. ensure to keep it safe as it will be needed to complete the application.</span>
+                                        </span>
                                     </p>
                                 </div>
                             </div>

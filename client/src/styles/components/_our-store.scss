@@ -5,10 +5,11 @@
     
     h4 {
         font-family: $raleway;
+        margin-top: -$lg-size !important;
     }
     
     #store {
-        margin-top: 3.125rem;
+        margin-top: $sm-size;
         text-align: center;
     }
     

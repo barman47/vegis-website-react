@@ -36,10 +36,10 @@ class Courses extends Component {
                     </div>
                     <div className="row">
                         <CourseCard 
-                            src={accessDB}
-                            alt="Access Database"
-                            title="Access Database for Beginners"
-                            to="/courses/access-db-for-beginners"
+                            src={desktopPublishing}
+                            alt="Desktop Publishing Masterclass"
+                            title="Complete Desktop Publishing Masterclass"
+                            to="/courses/complete-desktop-publishing-masterclass"
                         />
                         <CourseCard 
                             src={graphicsDesign}
@@ -54,32 +54,6 @@ class Courses extends Component {
                             to="/courses/internet-technology-masterclass"
                         />
                         <CourseCard 
-                            src={mysql}
-                            alt="MySQL Database"
-                            title="Learn Database Design with MySQL"
-                            to="/courses/learn-database-design-with-mysql"
-                        />
-                    </div>
-                    <div className="row">
-                        <CourseCard 
-                            src={appsThatSell}
-                            alt="Visual Basic"
-                            title="Learn and make apps that sell using Visual Basic.NET"
-                            to="/courses/learn-and-make-app-that-sells-using-visual-basic"
-                        />
-                        <CourseCard 
-                            src={vbMasterclass}
-                            alt="Graphices Design Mastery"
-                            title="Visual Basic.NET Masterclass"
-                            to="/courses/visual-basic-dot-net-masterclass"
-                        />
-                        <CourseCard 
-                            src={visualBasic}
-                            alt="Internet Technology Masterclass"
-                            title="Visual Basic programming with windows form Apps"
-                            to="/courses/visual-basic-programming-with-windows-forms-apps"
-                        />
-                        <CourseCard 
                             src={systemEngineering}
                             alt="Computer and System Engineering"
                             title="Computer and System Engineering for Beginners"
@@ -88,16 +62,10 @@ class Courses extends Component {
                     </div>
                     <div className="row">
                         <CourseCard 
-                            src={desktopPublishing}
-                            alt="Desktop Publishing Masterclass"
-                            title="Complete Desktop Publishing Masterclass"
-                            to="/courses/complete-desktop-publishing-masterclass"
-                        />
-                        <CourseCard 
-                            src={java}
-                            alt="Programming in Java"
-                            title="A complete guide to programming in Java"
-                            to="/courses/a-complete-guide-to-programming-in-java"
+                            src={node}
+                            alt="NodeJS, ExpressJS, and MongoDB"
+                            title="Node.js, Express.js &amp; Mongo DB: From development to Deployment"
+                            to="/courses/nodejs-expressjs-mongodb-from-development-to-deployment"
                         />
                         <CourseCard 
                             src={javascript}
@@ -110,6 +78,38 @@ class Courses extends Component {
                             alt="Web Development"
                             title="Web Development: A beginner’s Guide"
                             to="/courses/web-development-a-beginners-guide"
+                        />
+                        <CourseCard 
+                            src={visualBasic}
+                            alt="Internet Technology Masterclass"
+                            title="Visual Basic programming with windows form Apps"
+                            to="/courses/visual-basic-programming-with-windows-forms-apps"
+                        />
+                    </div>
+                    <div className="row">
+                        <CourseCard 
+                            src={accessDB}
+                            alt="Access Database"
+                            title="Access Database for Beginners"
+                            to="/courses/access-db-for-beginners"
+                        />
+                        <CourseCard 
+                            src={java}
+                            alt="Programming in Java"
+                            title="A complete guide to programming in Java"
+                            to="/courses/a-complete-guide-to-programming-in-java"
+                        />
+                        <CourseCard 
+                            src={mysql}
+                            alt="MySQL Database"
+                            title="Learn Database Design with MySQL"
+                            to="/courses/learn-database-design-with-mysql"
+                        />
+                         <CourseCard 
+                            src={appsThatSell}
+                            alt="Visual Basic"
+                            title="Learn and make apps that sell using Visual Basic.NET"
+                            to="/courses/learn-and-make-app-that-sells-using-visual-basic"
                         />
                     </div>
                     <div className="row">
@@ -125,12 +125,13 @@ class Courses extends Component {
                             title="SQLite made Easy"
                             to="/courses/sqlite-made-easy"
                         />                    
+                        
                         <CourseCard 
-                            src={node}
-                            alt="NodeJS, ExpressJS, and MongoDB"
-                            title="Node.js, Express.js &amp; Mongo DB: From development to Deployment"
-                            to="/courses/nodejs-expressjs-mongodb-from-development-to-deployment"
-                        />                    
+                            src={vbMasterclass}
+                            alt="Graphices Design Mastery"
+                            title="Visual Basic.NET Masterclass"
+                            to="/courses/visual-basic-dot-net-masterclass"
+                        />                
                     </div>
                 </section>
             </Fragment>
