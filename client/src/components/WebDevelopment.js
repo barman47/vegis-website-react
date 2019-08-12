@@ -11,7 +11,7 @@ class WebDevelopment extends Component {
         super(props);
         this.state = {
             type: 'SIWES',
-            title: 'Web Development: A beginner\'s Guide',
+            title: 'Web Development: A beginner’s Guide',
             duration: '24 Weeks',
             effort: '15 - 22 Hours per week',
             level: 'Advanced',

@@ -16,13 +16,12 @@ export const SiwesDropdown = ({ defaultValue, onChange, courseErrorMessage }) =>
         >
             <option value="" disabled>Choose Course</option>
             <option value="A complete guide to programming in Java">A complete guide to programming in Java</option>
-            <option value="Visual Basic.NET Masterclass">Visual Basic.Net Masterclass</option>
+            <option value="Visual Basic.NET Masterclass">Visual Basic.NET Masterclass</option>
             <option value="Visual Basic programming with windows form Apps">Visual basic programming with windows form Apps</option>
-            <option value="Learn and make apps that sell using Visual Basic.NET">Learn and make apps that sells using Visual Basic.net</option>
+            <option value="Learn and make apps that sell using Visual Basic.NET">Learn and make apps that sell using Visual Basic.NET</option>
             <option value="Learn JavaScript from Novice to Professional">Learn JavaScript from Novice to Professional</option>
             <option value="Web Development: A beginner’s Guide">Web Development: A beginner’s Guide</option>
             <option value="Learn Database Design with MySQL">Learn Database Design with MySQL</option>
-            <option value="Access Database for Beginners">Access Database for Beginners</option>
             <option value="Access Database for Beginners">Access Database for Beginners</option>
             <option value="MongoDB Essentials">MongoDB Essentials</option>
             <option value="Node.js, Express.js & Mongo DB: From development to Deployment">Node.js, Express.js &amp; Mongo DB: From development to Deployment</option>
