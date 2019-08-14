@@ -30,6 +30,8 @@ import Students from './components/Students';
 import ApplicationForm from './components/ApplicationForm';
 import FindStudent from './components/FindStudent';
 
+import ScrollToTop from './components/ScrollToTop';
+
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -37,37 +39,39 @@ class App extends Component {
 	render () {
 		return (
 			<Provider store={store}>
-				<Router>
-					<Fragment>
-						<Header />
-						<Route path="/" exact={true} component={Home} />
-						<Route path="/courses" exact={true} component={Courses} />
-						<Route path="/about" exact={true} component={About} />
-            			<Route path="/store/laptops" exact={true} component={Laptops} />
-            			<Route path="/store/systemUnits" exact={true} component={SystemUnits} />
-            			<Route path="/store/tabs" exact={true} component={Tabs} />
-            			<Route path="/store/screens" exact={true} component={Screens} />
-            			<Route path="/store/printers" exact={true} component={Printers} />
-            			<Route path="/store/accessories" exact={true} component={Accessories} />
-						<Route path="/students" exact={true} component={Students} />
-						<Route path="/api/students/findStudent" exact={true} component={ApplicationForm} />
-						<Route path="/students/find" exact={true} component={FindStudent} />
-						<Route path="/courses/access-db-for-beginners" exact={true} component={AccessDatabase} />
-						<Route path="/courses/graphics-design-mastery" exact={true} component={GraphicsDesign} />
-						<Route path="/courses/internet-technology-masterclass" exact={true} component={InternetTechnologyMasterclass} />
-						<Route path="/courses/learn-database-design-with-mysql" exact={true} component={MySQL} />
-						<Route path="/courses/a-complete-guide-to-programming-in-java" exact={true} component={Java} />
-						<Route path="/courses/learn-javascript-from-novice-to-professional" exact={true} component={JavaScript} />
-						<Route path="/courses/web-development-a-beginners-guide" exact={true} component={WebDevelopment} />
-						<Route path="/courses/mongodb-essentials" exact={true} component={MongoDB} />
-						<Route path="/courses/sqlite-made-easy" exact={true} component={SQLite} />
-						<Route path="/courses/nodejs-expressjs-mongodb-from-development-to-deployment" exact={true} component={NodeExpressMongoDB} />
-						<Route path="/courses/complete-desktop-publishing-masterclass" exact={true} component={DesktopPublishing} />
-						<Route path="/courses/visual-basic-dot-net-masterclass" exact={true} component={VBMasterClass} />
-						<Route path="/courses/visual-basic-programming-with-windows-forms-apps" exact={true} component={VisualBasic} />
-						<Route path="/courses/learn-and-make-app-that-sells-using-visual-basic" exact={true} component={AppsThatSell} />
-						<Footer />
-					</Fragment>
+				<Router onUpdate={() => window.scrollTo(0, 0)} history={this.props.history}>
+					<ScrollToTop>
+						<Fragment>
+							<Header />
+							<Route path="/" exact={true} component={Home} />
+							<Route path="/courses" exact={true} component={Courses} />
+							<Route path="/about" exact={true} component={About} />
+							<Route path="/store/laptops" exact={true} component={Laptops} />
+							<Route path="/store/systemUnits" exact={true} component={SystemUnits} />
+							<Route path="/store/tabs" exact={true} component={Tabs} />
+							<Route path="/store/screens" exact={true} component={Screens} />
+							<Route path="/store/printers" exact={true} component={Printers} />
+							<Route path="/store/accessories" exact={true} component={Accessories} />
+							<Route path="/students" exact={true} component={Students} />
+							<Route path="/api/students/findStudent" exact={true} component={ApplicationForm} />
+							<Route path="/students/find" exact={true} component={FindStudent} />
+							<Route path="/courses/access-db-for-beginners" exact={true} component={AccessDatabase} />
+							<Route path="/courses/graphics-design-mastery" exact={true} component={GraphicsDesign} />
+							<Route path="/courses/internet-technology-masterclass" exact={true} component={InternetTechnologyMasterclass} />
+							<Route path="/courses/learn-database-design-with-mysql" exact={true} component={MySQL} />
+							<Route path="/courses/a-complete-guide-to-programming-in-java" exact={true} component={Java} />
+							<Route path="/courses/learn-javascript-from-novice-to-professional" exact={true} component={JavaScript} />
+							<Route path="/courses/web-development-a-beginners-guide" exact={true} component={WebDevelopment} />
+							<Route path="/courses/mongodb-essentials" exact={true} component={MongoDB} />
+							<Route path="/courses/sqlite-made-easy" exact={true} component={SQLite} />
+							<Route path="/courses/nodejs-expressjs-mongodb-from-development-to-deployment" exact={true} component={NodeExpressMongoDB} />
+							<Route path="/courses/complete-desktop-publishing-masterclass" exact={true} component={DesktopPublishing} />
+							<Route path="/courses/visual-basic-dot-net-masterclass" exact={true} component={VBMasterClass} />
+							<Route path="/courses/visual-basic-programming-with-windows-forms-apps" exact={true} component={VisualBasic} />
+							<Route path="/courses/learn-and-make-app-that-sells-using-visual-basic" exact={true} component={AppsThatSell} />
+							<Footer />
+						</Fragment>
+					</ScrollToTop>
 				</Router>
 			</Provider>
 		);
