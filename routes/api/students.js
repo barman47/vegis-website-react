@@ -131,6 +131,8 @@ router.post('/activateStudent', (req, res) => {
     const { errors, isValid } = validateActivateStudentInput(req.body);
     const { authenticationPin } = require('../../config/keys');
 
+    console.log(req.body.authenticationPin);
+
     if(!isValid) {
         return res.status(400).json(errors);
     }
