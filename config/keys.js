@@ -1,4 +1,5 @@
-module.exports = {
-    mongoURI: process.env.DATABASE_URI || 'mongodb://localhost:27017/vegistech',
-    authenticationPin: process.env.AUTHENTICATION_PIN || 5555
-};
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys_prod');
+} else {
+    module.exports = require('./keys_dev');
+}

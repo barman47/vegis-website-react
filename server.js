@@ -2,19 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const secure = require('express-force-https');
 const path = require('path');
-const request = require('request-json');
-const url = require('url');
 
-var TILL_URL = url.parse('https://platform.tillmobile.com/api/send?username=10d170f9197e4d66af762fe61b2c18&api_key=cf41958ebe8a3e99cde3353c3616d90895bb23cb');
-
-var TILL_BASE = TILL_URL.protocol + '//' + TILL_URL.host;
-var TILL_PATH = TILL_URL.pathname;
-
-if(TILL_URL.query != null) {
-    TILL_PATH += "?"+TILL_URL.query;
-}
-
-var client = request.createClient(TILL_BASE);
+const accountSid = 'AC1c74fb39361ac85eb11c8a91e187221f';
+const authToken = 'baa8b1d6eaed60bd0b79f41e4ffc8665';
+const client = require('twilio')(accountSid, authToken);
 
 const app = express();
 
@@ -44,23 +35,14 @@ app.get('*', (req, res) => {
 });
 
 app.post('/sendMessage', (req, res) => {      
-    var data = {
-        "phone": '09026425337',
-        "questions" : [{
-          "text": "Rgeistartion successful",
-          "tag": "VEGISTECH",
-          "responses": ["Red", "Green", "Yellow"],
-          "webhook": req.body.webhook_url + "?uuid="+req.body.uuid
-        }],
-        conclusion: 'Thanks for registering'
-      };
-    
-      client.post(TILL_PATH, data, function(err, res, body) {
-        return console.log(res.statusCode);
-      });  
-    
-      res.send(res);
-
+  client.messages
+    .create({
+       body: 'This is a test message from vegistech.com.',
+       from: '+12055513500',
+       to: ['+2349026425337', '+2348130327095', '+2348162201403']
+     })
+    .then(message => res.send(message.sid + ' Message sent'))
+    .catch(err => console.log(err));
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));

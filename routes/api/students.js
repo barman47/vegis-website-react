@@ -13,8 +13,6 @@ router.get('/', (req, res) => {
 router.post('/registerStudent', (req, res) => {
     const { errors, isValid } = validateStudentRegisterInput(req.body);
 
-    // console.log(req.body.passport);
-
     if(!isValid) {
         return res.status(400).json(errors);
     }
