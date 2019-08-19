@@ -131,14 +131,37 @@ router.post('/activateStudent', (req, res) => {
     const { errors, isValid } = validateActivateStudentInput(req.body);
     const { authenticationPin } = require('../../config/keys');
 
-    console.log('server authentication pin ', authenticationPin);
-
     if(!isValid) {
         return res.status(400).json(errors);
     }
 
     switch (parseInt(req.body.authenticationPin)) {
         case authenticationPin:
+            Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
+                .then(student => {
+                    if (student) {
+                        res.json(student)
+                    } else {
+                        errors.registrationNumber = 'Student not found.';
+                        res.status(404).json(errors);
+                    }
+                })
+                .catch(err => console.log(err));
+                break;
+
+        case process.env.AUTHENTICATION_PIN1:
+            Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
+                .then(student => {
+                    if (student) {
+                        res.json(student)
+                    } else {
+                        errors.registrationNumber = 'Student not found.';
+                        res.status(404).json(errors);
+                    }
+                })
+                .catch(err => console.log(err));
+                break;
+        case process.env.AUTHENTICATION_PIN2:
             Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
                 .then(student => {
                     if (student) {
