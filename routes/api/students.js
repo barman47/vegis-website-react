@@ -129,7 +129,7 @@ router.post('/findStudent', (req, res) => {
 
 router.post('/activateStudent', (req, res) => {
     const { errors, isValid } = validateActivateStudentInput(req.body);
-    const { authenticationPin } = require('../../config/keys');
+    const { authenticationPin, authenticationPin2 } = require('../../config/keys');
 
     if(!isValid) {
         return res.status(400).json(errors);
@@ -149,7 +149,7 @@ router.post('/activateStudent', (req, res) => {
                 .catch(err => console.log(err));
                 break;
 
-        case process.env.AUTHENTICATION_PIN1:
+        case authenticationPin2:
             Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
                 .then(student => {
                     if (student) {
@@ -161,19 +161,7 @@ router.post('/activateStudent', (req, res) => {
                 })
                 .catch(err => console.log(err));
                 break;
-        case process.env.AUTHENTICATION_PIN2:
-            Student.findOneAndUpdate({ studentId: req.body.registrationNumber }, {$set: { activated: true }}, { new: true })
-                .then(student => {
-                    if (student) {
-                        res.json(student)
-                    } else {
-                        errors.registrationNumber = 'Student not found.';
-                        res.status(404).json(errors);
-                    }
-                })
-                .catch(err => console.log(err));
-                break;
-
+                
         default:
             errors.authenticationPin = 'Incorrect Authentication Pin!';
             return res.status(400).json(errors);
