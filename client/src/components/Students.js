@@ -57,8 +57,8 @@ class Students extends Component {
             autoClose: true,
             format: 'dddd dd mmmm, yyyy',
             i18n: {
-                months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
-                weekdays: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+                months: ['January', 'February', 'March', 'April', 'May', 'June',' July', 'August', 'September', 'October', 'November', 'December'],
+                weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             },
             maxDate: new Date('December 31, ' + new Date().getFullYear()),
             yearRange: 60

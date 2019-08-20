@@ -125,6 +125,7 @@ body {
     padding: $md-size;
     // padding: $sm-size $lg-size $lg-size $lg-size;
     overflow-y: hidden;
+    width: 35%;
 }
 
 .modal-header {
@@ -148,6 +149,16 @@ body {
 .hide {
     display: none !important;
 }
+
+// @media (max-width: 1024px) {
+//     .modal-container {
+//         margin-left: $md-size;
+//         margin-right: $md-size;
+//         position: relative;
+//         top: -15vh;
+//         width: 50%;
+//     }
+// }
 
 @media (max-width: $md-breakpoint) {
     .modal-container {

@@ -24,10 +24,6 @@ class ApplicationForm extends Component {
         });
     }
 
-    componentWillReceiveProps (nextProps) {
-        console.log(nextProps);
-    }
-
     showModal = () => {
         this.props.showModal();
     }
