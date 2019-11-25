@@ -24,8 +24,8 @@ router.post('/add', (req, res) => {
     });
 
     Project.findOne({ topic: req.body.topic.toUpperCase(), department: req.body.department.toUpperCase() })
-        .then(project => {
-            if (project) {
+        .then(returnedProject => {
+            if (returnedProject) {
                 errors.topic = 'Topic already exists!';
                 return res.status(500).json(errors);
             }
