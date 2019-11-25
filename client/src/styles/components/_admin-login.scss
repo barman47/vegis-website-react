@@ -1,0 +1,27 @@
+.admin-login {
+    background-color: $off-white;
+    font-family: $quicksand;
+    margin: $lg-size auto;
+    width: 40%;
+    padding: $md-size;
+
+    h5 {
+        text-align: center;
+    }
+
+    button {
+        color: $off-white;
+        cursor: pointer;
+        background-color: $orange;
+        border: none;
+        border-radius: 2px;
+        box-shadow: $shadow;
+        font-family: $quicksand;
+        padding: $xs-size $xxl-size;
+        transition: background-color .2s ease-out;
+    }
+
+    button:hover {
+        background-color: darken($orange, 5%);
+    }
+}

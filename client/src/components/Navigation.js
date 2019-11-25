@@ -100,6 +100,7 @@ class Navigation extends Component {
                                     }
                                 </li>
                                 <li><NavLink onMouseOver={this.hideMenu} className="links" to="/about">About</NavLink></li>
+                                <li><NavLink onMouseOver={this.hideMenu} className="links" to="/admin">Admin</NavLink></li>
                             </ul>
                         </div>
                     </nav>
@@ -125,6 +126,7 @@ class Navigation extends Component {
                             }
                         </li>
                         <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/about">About</NavLink></li>
+                        <li className="mobile-link"><NavLink onMouseOver={this.hideMenu} className="links" to="/admin">Admin</NavLink></li>
                     </ul>
                 </div>
             </Fragment>

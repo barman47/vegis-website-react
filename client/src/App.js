@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home';
+import Admin from './components/admin/Admin';
 import Courses from './components/Courses';
 import AccessDatabase from './components/AccessDatabase';
 import GraphicsDesign from './components/GraphicsDesign';
@@ -46,6 +47,7 @@ class App extends Component {
 							<Route path="/" exact={true} component={Home} />
 							<Route path="/courses" exact={true} component={Courses} />
 							<Route path="/about" exact={true} component={About} />
+							<Route path="/admin" exact={true} component={Admin} />
 							<Route path="/store/laptops" exact={true} component={Laptops} />
 							<Route path="/store/systemUnits" exact={true} component={SystemUnits} />
 							<Route path="/store/tabs" exact={true} component={Tabs} />

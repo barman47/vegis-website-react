@@ -9,7 +9,9 @@ const client = require('twilio')(accountSid, authToken);
 
 const app = express();
 
+const admin = require('./routes/api/admin');
 const students = require('./routes/api/students');
+const projects = require('./routes/api/projects');
 
 const { mongoURI } = require('./config/keys');
 const port = process.env.PORT || 5000;
@@ -28,6 +30,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
+app.use('/api/admin', admin);
+app.use('/api/projects', projects);
 app.use('/api/students', students);
 
 app.get('*', (req, res) => {
