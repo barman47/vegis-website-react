@@ -14,8 +14,8 @@ router.post('/add', (req, res) => {
     }
 
     const project = new Project({
-        department: req.body.department,
-        topic: req.body.topic,
+        department: req.body.department.toUpperCase(),
+        topic: req.body.topic.toUpperCase(),
         abstract: req.body.abstract,
         chapters: req.body.chapters,
         pages: req.body.pages,
@@ -23,8 +23,16 @@ router.post('/add', (req, res) => {
         introduction: req.body.introduction
     });
 
-    project.save()
-        .then(() => res.status(201).json({ msg: 'Added successfully.' }))
+    Project.findOne({ topic: req.body.topic.toUpperCase(), department: req.body.department.toUpperCase() })
+        .then(project => {
+            if (project) {
+                errors.topic = 'Topic already exists!';
+                return res.status(500).json(errors);
+            }
+            project.save()
+                .then(() => res.status(201).json({ msg: 'Added successfully.' }))
+                .catch(err => console.error(err));
+        })
         .catch(err => console.error(err));
 });
 
