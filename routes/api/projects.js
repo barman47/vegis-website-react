@@ -5,11 +5,15 @@ const Project = require('../../models/Project');
 
 const validateAddProjectInput = require('../../utils/validation/add-project');
 
+router.get('/', (req, res) => {
+    res.json({ msg: 'Hello Chika Dibs!' });
+});
+
 router.post('/add', (req, res) => {
-    console.log('Project Request');
     const { errors, isValid } = validateAddProjectInput(req.body);
 
     if (!isValid) {
+        console.error(errors);
         return res.status(406).json(errors);
     }
 
@@ -27,6 +31,7 @@ router.post('/add', (req, res) => {
         .then(returnedProject => {
             if (returnedProject) {
                 errors.topic = 'Topic already exists!';
+                console.error(errors);
                 return res.status(500).json(errors);
             }
             project.save()

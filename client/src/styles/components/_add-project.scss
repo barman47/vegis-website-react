@@ -1,0 +1,24 @@
+.add-project-form {
+    font-family: $quicksand;
+    margin: $lg-size auto;
+    border: 1px solid darken($off-white, 20%);
+    padding: $md-size $lg-size;
+    width: 50%;
+
+    h3 {
+        text-align: center;
+    }
+
+    textarea {
+        height: 20rem;
+        padding: $sm-size;
+        resize: none;
+    }
+
+    textarea:focus {
+        border: none;
+        outline: none;
+        background-color: #fff;
+    }
+
+}

@@ -38,15 +38,16 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-app.post('/sendMessage', (req, res) => {      
-  client.messages
-    .create({
-       body: 'This is a test message from vegistech.com.',
-       from: '+12055513500',
-       to: ['+2349026425337', '+2348130327095', '+2348162201403']
-     })
-    .then(message => res.send(message.sid + ' Message sent'))
-    .catch(err => console.log(err));
+app.post('/sendMessage', (req, res) => {    
+    console.log('message request');
+    client.messages
+        .create({
+        body: 'This is a test message from vegistech.com.',
+        from: '+12055513500',
+        to: ['+2349026425337', '+2348130327095', '+2348162201403']
+        })
+        .then(message => res.send(message.sid + ' Message sent'))
+        .catch(err => console.log(err));
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));
